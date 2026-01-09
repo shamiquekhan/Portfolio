@@ -15,7 +15,7 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     background: var(--cream);
     color: var(--black);
     line-height: 1.6;
@@ -32,7 +32,7 @@ body {
 }
 
 .banner-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
     font-weight: 900;
     line-height: 1;
@@ -74,7 +74,7 @@ body {
 }
 
 .section-title-large {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Cinzel', serif;
     font-size: 6rem;
     font-weight: 900;
     color: var(--red);
@@ -99,7 +99,7 @@ body {
 }
 
 .portfolio-name {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Cinzel', serif;
     font-size: 2.5rem;
     letter-spacing: 0.1em;
     color: var(--red);
@@ -167,7 +167,7 @@ body {
     padding: 1.5rem;
     background: var(--cream);
     border-left: 4px solid var(--red);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Libre Baskerville', serif;
     margin-top: 1rem;
 }
 
@@ -311,7 +311,7 @@ body {
 }
 
 .stats-grid-vertical .stat-box h3 {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Cinzel', serif;
     font-size: 4rem;
     color: var(--red);
     margin-bottom: 0.5rem;
@@ -320,7 +320,7 @@ body {
 .stats-grid-vertical .stat-box p {
     font-size: 0.95rem;
     color: var(--gray);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 /* Right Panel - Red Background */
@@ -360,7 +360,7 @@ body {
 }
 
 .right-panel .portrait-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Cinzel', serif;
     font-size: 4.5rem;
     line-height: 0.9;
     margin-bottom: 1rem;
@@ -381,7 +381,7 @@ body {
     background: var(--white);
     color: var(--red);
     text-decoration: none;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
     font-size: 1rem;
     border-radius: 30px;
@@ -404,7 +404,7 @@ body {
 }
 
 .overview-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Cinzel', serif;
     font-size: 2rem;
     letter-spacing: 0.1em;
     margin-bottom: 1rem;
@@ -422,7 +422,7 @@ body {
 }
 
 .github-stat h4 {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Cinzel', serif;
     font-size: 3rem;
     color: var(--white);
     margin-bottom: 0.3rem;
@@ -431,7 +431,7 @@ body {
 .github-stat p {
     font-size: 0.85rem;
     color: rgba(255,255,255,0.9);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 500;
 }
 
@@ -502,7 +502,7 @@ body {
 }
 
 .stat-box h3 {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Cinzel', serif;
     font-size: 4rem;
     color: var(--red);
     margin-bottom: 0.5rem;
@@ -546,7 +546,7 @@ body {
 }
 
 .portrait-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Cinzel', serif;
     font-size: 5rem;
     line-height: 0.9;
     margin-bottom: 1rem;
@@ -565,7 +565,7 @@ body {
     background: var(--red);
     color: white;
     text-decoration: none;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
     font-size: 1rem;
     border-radius: 30px;
@@ -608,7 +608,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--red);
@@ -685,7 +685,7 @@ body {
 }
 
 .overlay-text p {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Libre Baskerville', serif;
     font-size: 1.2rem;
     line-height: 1.4;
     color: var(--black);
@@ -742,7 +742,7 @@ body {
 }
 
 .view-all-btn {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -802,7 +802,7 @@ body {
 }
 
 .certificate-info h3 {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Cinzel', serif;
     font-size: 2rem;
     color: var(--red);
     margin-bottom: 0.5rem;
@@ -884,7 +884,7 @@ body {
 }
 
 .award-number {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Cinzel', serif;
     font-size: 2rem;
     font-weight: 900;
 }
@@ -971,7 +971,7 @@ body {
 }
 
 .timeline-title {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 1.1rem;
     letter-spacing: 0.05em;
     color: var(--black);
@@ -981,7 +981,7 @@ body {
 }
 
 .timeline-date {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 0.8rem;
     color: var(--gray);
     font-weight: 500;
@@ -989,7 +989,7 @@ body {
 }
 
 .timeline-company {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 0.9rem;
     color: var(--red);
     margin-bottom: 0.75rem;
@@ -1003,7 +1003,7 @@ body {
 }
 
 .timeline-desc {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 0.95rem;
     line-height: 1.7;
     color: var(--gray);
@@ -1042,7 +1042,7 @@ body {
 }
 
 .work-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Cinzel', serif;
     font-size: 8rem;
     font-weight: 900;
     line-height: 0.85;
@@ -1075,7 +1075,7 @@ body {
     align-items: center;
     gap: 1rem;
     font-size: 1.2rem;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 500;
 }
 
@@ -1351,3 +1351,5 @@ body {
         font-size: 1.2rem;
     }
 }
+
+
