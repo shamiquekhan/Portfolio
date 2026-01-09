@@ -486,6 +486,21 @@
         // Prevent scrolling during animation
         document.body.classList.add('no-scroll');
 
+        function endAnimation() {
+            overlay.classList.add('slide-up');
+            document.body.classList.remove('no-scroll');
+            
+            // Remove overlay from DOM after animation
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 300);
+        }
+
+        // Safety timeout: force end animation after 3 seconds no matter what
+        const safetyTimeout = setTimeout(() => {
+            endAnimation();
+        }, 3000);
+
         function showNextGreeting() {
             if (currentIndex < greetings.length) {
                 // Reset animation
@@ -499,22 +514,23 @@
                 setTimeout(showNextGreeting, 220); // Show each greeting for 220ms
             } else {
                 // All greetings shown, slide up overlay
+                clearTimeout(safetyTimeout); // Clear safety timeout
                 setTimeout(() => {
-                    overlay.classList.add('slide-up');
-                    document.body.classList.remove('no-scroll');
-                    
-                    // Remove overlay from DOM after animation
-                    setTimeout(() => {
-                        overlay.style.display = 'none';
-                    }, 270);
+                    endAnimation();
                 }, 130);
             }
         }
 
-        // Start the animation when page loads
-        window.addEventListener('load', () => {
-            setTimeout(showNextGreeting, 70);
-        });
+        // Start the animation as soon as DOM is ready, don't wait for all resources
+        // Use DOMContentLoaded instead of load for faster startup on mobile
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                setTimeout(showNextGreeting, 100);
+            });
+        } else {
+            // DOM already loaded
+            setTimeout(showNextGreeting, 100);
+        }
     </script>
 
     <script>
