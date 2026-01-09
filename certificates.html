@@ -131,6 +131,24 @@
             display: block;
         }
 
+        .cert-item.placeholder img {
+            object-fit: contain;
+            background: var(--white);
+            padding: 3rem;
+        }
+
+        .cert-placeholder-icon {
+            width: 100%;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--white);
+            color: var(--red);
+            font-size: 5rem;
+            cursor: not-allowed;
+        }
+
         .cert-info {
             padding: 1.5rem;
         }
@@ -223,7 +241,7 @@
 
     <!-- Header -->
     <section class="cert-page-header">
-        <a href="index-final.html" class="cert-back-btn">
+        <a href="index.html" class="cert-back-btn">
             <i class="fas fa-arrow-left"></i> BACK TO PORTFOLIO
         </a>
         <h1 class="cert-page-title">CERTIFICATES<br>& CREDENTIALS</h1>
@@ -255,56 +273,55 @@
     </div>
 
     <script>
-        // Certificate data
+        // Certificate data - mapped to actual files
         const certificates = [
             { img: 'CS50AI shamique Khan_page-0001.jpg', title: 'CS50 AI with Python', issuer: 'Harvard University', category: 'ai-ml' },
             { img: 'AppliedAILabDeepLearningforComputerVision20251220-32-d44vj7_page-0001.jpg', title: 'Deep Learning for Computer Vision', issuer: 'WorldQuant University', category: 'ai-ml' },
             { img: 'IBM Data Science Professional Certificate_page-0001.jpg', title: 'Data Science Professional', issuer: 'IBM', category: 'data-science' },
             { img: 'eCertificate_page-0001.jpg', title: 'Oracle Cloud Infrastructure 2025 Certified Generative AI Professional', issuer: 'Oracle', category: 'ai-ml' },
-            { img: 'AppliedAILabNaturalLanguageProcessing20251220-32-1pphz5f_page-0001.jpg', title: 'Natural Language Processing', issuer: 'Applied AI Lab', category: 'ai-ml' },
-            { img: 'AppliedAILabRAG20251220-32-155u5gc_page-0001.jpg', title: 'Retrieval-Augmented Generation (RAG)', issuer: 'Applied AI Lab', category: 'ai-ml' },
-            { img: 'McKinsey Forward Program_page-0001.jpg', title: 'McKinsey Forward Program', issuer: 'McKinsey & Company', category: 'business' },
-            { img: 'Google Startup School_page-0001.jpg', title: 'AI Startup School', issuer: 'Google for Startups', category: 'business' },
-            { img: 'Certificate_8534880680_07012026022317.pdf', title: 'SEBI Investor Awareness Test', issuer: 'Securities and Exchange Board of India', category: 'business' },
-            { img: 'Yale certificate.pdf', title: 'Creating Change through Social Entrepreneurship', issuer: 'Yale University', category: 'business' },
-            { img: 'Certificate-Diving-into-Radical-Creativity .pdf', title: 'Diving into Radical Creativity', issuer: 'Aalto University', category: 'business' },
-            { img: 'German_Language_Course_Completion_German_Language_(2025_Edition)_KHAN.png', title: 'German Language Course', issuer: 'American University', category: 'business' },
-            { img: 'Coursera Certificate', title: 'MBA Essentials', issuer: 'University of Glasgow', category: 'business' },
-            { img: 'Machine Learning Algorithms Certification.pdf', title: 'Machine Learning Algorithms: Supervised Learning', issuer: 'Amii (Alberta Machine Intelligence Institute)', category: 'ai-ml' },
-            { img: 'NLP in TensorFlow', title: 'Natural Language Processing in TensorFlow', issuer: 'DeepLearning.AI', category: 'ai-ml' },
-            { img: 'prepare-data-for-ml-apis-on-google-cloud-skill-badge', title: 'Prepare Data for ML APIs on Google Cloud', issuer: 'Google', category: 'cloud' },
-            { img: 'Coursera rag certification.pdf', title: 'RAG with Embeddings & Vector Databases', issuer: 'Coursera', category: 'ai-ml' },
-            { img: 'Generative AI: Elevate Your Data Science Career Certificate', title: 'Generative AI: Elevate Your Data Science Career', issuer: 'IBM', category: 'ai-ml' },
-            { img: 'Blockchain and Cryptocurrency Certificate', title: 'Blockchain and Cryptocurrency Explained', issuer: 'University of Michigan', category: 'cloud' },
+            { img: 'placeholder', title: 'Natural Language Processing', issuer: 'Applied AI Lab', category: 'ai-ml' },
+            { img: 'Coursera rag certification_page-0001.jpg', title: 'Retrieval-Augmented Generation (RAG)', issuer: 'Coursera', category: 'ai-ml' },
+            { img: 'McKinsey.orgForward20251210-33-l8dkde_page-0001.jpg', title: 'McKinsey Forward Program', issuer: 'McKinsey & Company', category: 'business' },
+            { img: 'io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_9EBEoodwiyWzaMeFT_1750867337413_completion_certificate_page-0001.jpg', title: 'AI Startup School', issuer: 'Google for Startups', category: 'business' },
+            { img: 'Certificate_8534880680_07012026022317_page-0001.jpg', title: 'SEBI Investor Awareness Test', issuer: 'Securities and Exchange Board of India', category: 'business' },
+            { img: 'placeholder', title: 'Creating Change through Social Entrepreneurship', issuer: 'Yale University', category: 'business' },
+            { img: 'shamique-course_end_quiz-Certificate-EN-Diving-into-Radical-Creativity (1)_page-0001.jpg', title: 'Diving into Radical Creativity', issuer: 'Aalto University', category: 'business' },
+            { img: 'placeholder', title: 'German Language Course', issuer: 'American University', category: 'business' },
+            { img: 'Coursera SG1IG2GZP1ZX_page-0001.jpg', title: 'MBA Essentials', issuer: 'University of Glasgow', category: 'business' },
+            { img: 'Machine Learning Algorithms_page-0001.jpg', title: 'Machine Learning Algorithms: Supervised Learning', issuer: 'Amii (Alberta Machine Intelligence Institute)', category: 'ai-ml' },
+            { img: 'nlp with tersorflow_page-0001.jpg', title: 'Natural Language Processing in TensorFlow', issuer: 'DeepLearning.AI', category: 'ai-ml' },
+            { img: 'prepare-data-for-ml-apis-on-google-cloud-skill-badg.png', title: 'Prepare Data for ML APIs on Google Cloud', issuer: 'Google', category: 'cloud' },
+            { img: 'Coursera gen ai in ds_page-0001.jpg', title: 'Generative AI: Elevate Your Data Science Career', issuer: 'IBM', category: 'ai-ml' },
+            { img: 'crpto certificate_page-0001.jpg', title: 'Blockchain and Cryptocurrency Explained', issuer: 'University of Michigan', category: 'cloud' },
             { img: 'Shamique Khan - Intermediate Machine Learning.png', title: 'Intermediate Machine Learning', issuer: 'Kaggle', category: 'ai-ml' },
-            { img: 'Shamique Khan - Intro to Machine Learning.png', title: 'Intro to Machine Learning', issuer: 'Kaggle', category: 'ai-ml' },
-            { img: 'Introduction to Large Language Models Certificate', title: 'Introduction to Large Language Models', issuer: 'Google Cloud', category: 'ai-ml' },
-            { img: 'Coursera AI for Everyone Certificate', title: 'AI For Everyone', issuer: 'DeepLearning.AI', category: 'ai-ml' },
-            { img: 'Nvidia AI Intra and Operations Fundamentals', title: 'AI Infrastructure and Operations Fundamentals', issuer: 'NVIDIA', category: 'cloud' },
-            { img: 'IIT Ropar Gen AI HacKathon Participation Certificate', title: 'Gen AI Hackathon Participation', issuer: 'IIT Ropar', category: 'ai-ml' },
-            { img: 'Fundamentals of Finance UCI', title: 'Fundamentals of Finance', issuer: 'UC Irvine', category: 'business' },
-            { img: 'Investment Banking Certificate', title: 'J.P. Morgan Investment Banking Job Simulation', issuer: 'Forage', category: 'business' },
-            { img: 'Machine learning For all', title: 'Machine Learning for All', issuer: 'University of London', category: 'ai-ml' },
-            { img: 'IBM Machine Learning Certificate', title: 'Machine Learning with Python', issuer: 'IBM', category: 'ai-ml' },
-            { img: 'MongoDB Basics', title: 'MongoDB Basics for Students', issuer: 'MongoDB', category: 'cloud' },
-            { img: 'Data Analysis With Python Certificate', title: 'Data Analysis with Python', issuer: 'IBM', category: 'data-science' },
-            { img: 'Data visualization with python Certificate', title: 'Data Visualization with Python', issuer: 'IBM', category: 'data-science' },
-            { img: 'Database and SQL certificate', title: 'Databases and SQL for Data Science', issuer: 'IBM', category: 'data-science' },
-            { img: 'Introduction To Responsible AI Certificate', title: 'Introduction to Responsible AI', issuer: 'Google Cloud Security', category: 'ai-ml' },
-            { img: 'Python Essentials', title: 'Python Essentials', issuer: 'Vityarthi', category: 'data-science' },
-            { img: 'Coursera Python For Data science Ai .pdf', title: 'Python for Data Science, AI & Development', issuer: 'IBM', category: 'data-science' },
-            { img: 'artificial-intelligence-fundamentals', title: 'Artificial Intelligence Fundamentals', issuer: 'IBM', category: 'ai-ml' },
-            { img: 'Google Analytics Certification', title: 'Google Analytics Certification', issuer: 'Google Digital Academy', category: 'data-science' },
-            { img: 'Prompt Engineering & Programming with OpenAI', title: 'Prompt Engineering & Programming with OpenAI', issuer: 'Columbia+', category: 'ai-ml' },
-            { img: 'Python Essentials 1 Certificate', title: 'Python Essentials 1', issuer: 'Cisco', category: 'data-science' },
-            { img: 'Python Essentials 2', title: 'Python Essentials 2', issuer: 'Cisco', category: 'data-science' },
-            { img: 'MCP Server Certificate', title: 'YouTube Labs - MCP', issuer: 'KodeKloud', category: 'cloud' },
-            { img: 'Data Analysis Job Simulation', title: 'Deloitte Australia Data Analytics Job Simulation', issuer: 'Forage', category: 'data-science' },
-            { img: 'Version controls And Gits Infosys Cources Certificate', title: 'Hands-On Version Control with Git', issuer: 'Infosys Springboard', category: 'cloud' },
-            { img: 'Python Infosys Cources Certificate', title: 'Mastering Python', issuer: 'Infosys Springboard', category: 'data-science' },
-            { img: 'HTML & CSS Infosys Cources Certificate', title: 'Designing a Company Website using HTML & CSS', issuer: 'Infosys Springboard', category: 'cloud' },
-            { img: 'Java Infosys Cources Certificate', title: 'Java Features', issuer: 'Infosys Springboard', category: 'data-science' },
-            { img: 'Intermediate German Certificate', title: 'Intermediate German: The world of work', issuer: 'The Open University', category: 'business' }
+            { img: 'placeholder', title: 'Intro to Machine Learning', issuer: 'Kaggle', category: 'ai-ml' },
+            { img: 'Certificate_8534880680_03122025124618_page-0001.jpg', title: 'Introduction to Large Language Models', issuer: 'Google Cloud', category: 'ai-ml' },
+            { img: 'Coursera AI for Everyone_page-0001.jpg', title: 'AI For Everyone', issuer: 'DeepLearning.AI', category: 'ai-ml' },
+            { img: 'Nvidia AI Intra and Operations Fundamentals_page-0001.jpg', title: 'AI Infrastructure and Operations Fundamentals', issuer: 'NVIDIA', category: 'cloud' },
+            { img: 'unstop IIT ropar Hachathon Certificate _page-0001.jpg', title: 'Gen AI Hackathon Participation', issuer: 'IIT Ropar', category: 'ai-ml' },
+            { img: 'Fundamentals of Finance UCI_page-0001.jpg', title: 'Fundamentals of Finance', issuer: 'UC Irvine', category: 'business' },
+            { img: 'placeholder', title: 'J.P. Morgan Investment Banking Job Simulation', issuer: 'Forage', category: 'business' },
+            { img: 'coursera uol ML for all_page-0001.jpg', title: 'Machine Learning for All', issuer: 'University of London', category: 'ai-ml' },
+            { img: 'ibm machine learning Certificate_page-0001.jpg', title: 'Machine Learning with Python', issuer: 'IBM', category: 'ai-ml' },
+            { img: 'placeholder', title: 'MongoDB Basics for Students', issuer: 'MongoDB', category: 'cloud' },
+            { img: 'IBMDesign20250813-31-lwb1ms_page-0001.jpg', title: 'Data Analysis with Python', issuer: 'IBM', category: 'data-science' },
+            { img: 'Coursera Data visualisation with python 8_page-0001.jpg', title: 'Data Visualization with Python', issuer: 'IBM', category: 'data-science' },
+            { img: 'sql certi_page-0001.jpg', title: 'Databases and SQL for Data Science', issuer: 'IBM', category: 'data-science' },
+            { img: 'Certificate_8534880680_03122025124717_page-0001.jpg', title: 'Introduction to Responsible AI', issuer: 'Google Cloud Security', category: 'ai-ml' },
+            { img: 'certificate_SHAMIQUE_KHAN_page-0001.jpg', title: 'Python Essentials', issuer: 'Vityarthi', category: 'data-science' },
+            { img: '20240716890312078_page-0001.jpg', title: 'Python for Data Science, AI & Development', issuer: 'IBM', category: 'data-science' },
+            { img: 'artificial-intelligence-fundamentals.png', title: 'Artificial Intelligence Fundamentals', issuer: 'IBM', category: 'ai-ml' },
+            { img: 'placeholder', title: 'Google Analytics Certification', issuer: 'Google Digital Academy', category: 'data-science' },
+            { img: '_certificate_shamiquekhan18-gmail-com_f200fff8-7ef2-4e26-97e7-5e95765c9f2e_page-0001.jpg', title: 'Prompt Engineering & Programming with OpenAI', issuer: 'Columbia+', category: 'ai-ml' },
+            { img: 'certificate_SHAMIQUE_KHAN (1)_page-0001.jpg', title: 'Python Essentials 1', issuer: 'Cisco', category: 'data-science' },
+            { img: 'placeholder', title: 'Python Essentials 2', issuer: 'Cisco', category: 'data-science' },
+            { img: 'placeholder', title: 'YouTube Labs - MCP', issuer: 'KodeKloud', category: 'cloud' },
+            { img: 'placeholder', title: 'Deloitte Australia Data Analytics Job Simulation', issuer: 'Forage', category: 'data-science' },
+            { img: 'placeholder', title: 'Hands-On Version Control with Git', issuer: 'Infosys Springboard', category: 'cloud' },
+            { img: 'placeholder', title: 'Mastering Python', issuer: 'Infosys Springboard', category: 'data-science' },
+            { img: 'CSE1021_INTRODUCTION-TO-PROBLEM-SOLVING-AND-PROGRAMMING_LTP_1.0_1_CSE1021_IPSP (2)_page-0001.jpg', title: 'Introduction to Problem Solving and Programming', issuer: 'VIT Bhopal', category: 'data-science' },
+            { img: 'SHAMIQUE KHAN.certificate_page-0001.jpg', title: 'Web Development Certificate', issuer: 'Infosys Springboard', category: 'cloud' },
+            { img: 'prompt-design-in-vertex-ai-skill-badge.png', title: 'Prompt Design in Vertex AI', issuer: 'Google Cloud', category: 'ai-ml' }
         ];
 
         // Render certificates
@@ -320,14 +337,30 @@
                 const certCard = document.createElement('div');
                 certCard.className = 'cert-item';
                 certCard.setAttribute('data-category', cert.category);
-                certCard.innerHTML = `
-                    <img src="certificates/${cert.img}" alt="${cert.title}" onclick="openModal('certificates/${cert.img}')">
-                    <div class="cert-info">
-                        <h3 class="cert-title">${cert.title}</h3>
-                        <p class="cert-issuer">${cert.issuer}</p>
-                        <span class="cert-category">${cert.category.replace('-', ' & ').toUpperCase()}</span>
-                    </div>
-                `;
+                
+                // Check if placeholder
+                if (cert.img === 'placeholder') {
+                    certCard.classList.add('placeholder');
+                    certCard.innerHTML = `
+                        <div class="cert-placeholder-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h3 class="cert-title">${cert.title}</h3>
+                            <p class="cert-issuer">${cert.issuer}</p>
+                            <span class="cert-category">${cert.category.replace('-', ' & ').toUpperCase()}</span>
+                        </div>
+                    `;
+                } else {
+                    certCard.innerHTML = `
+                        <img src="certificates/${cert.img}" alt="${cert.title}" onclick="openModal('certificates/${cert.img}')">
+                        <div class="cert-info">
+                            <h3 class="cert-title">${cert.title}</h3>
+                            <p class="cert-issuer">${cert.issuer}</p>
+                            <span class="cert-category">${cert.category.replace('-', ' & ').toUpperCase()}</span>
+                        </div>
+                    `;
+                }
                 grid.appendChild(certCard);
             });
         }
