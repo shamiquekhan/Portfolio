@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shamique Khan - AI/ML Portfolio</title>
+    <link rel="stylesheet" href="style-modern.css">
+    <style>
+        /* Intro Animation Overlay */
+        .intro-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #8B1A1A 0%, #6B0F0F 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: transform 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+
+        .intro-overlay.slide-up {
+            transform: translateY(-100%);
+        }
+
+        .hello-text {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 8rem;
+            color: #FFFFFF;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            opacity: 0;
+            animation: fadeInOut 0.2s ease-in-out forwards;
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hide body scroll during animation */
+        body.no-scroll {
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .hello-text {
+                font-size: 4rem;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Intro Animation Overlay -->
+    <div class="intro-overlay" id="introOverlay">
+        <div class="hello-text" id="helloText">Hello</div>
+    </div>
+
+    <!-- Header Banner -->
+    <section class="header-banner">
+        <div class="banner-content" data-animate="fade-up">
+            <h1 class="banner-title" data-animate="fade-up" data-delay="100">AI & MACHINE LEARNING</h1>
+            <p class="banner-subtitle" data-animate="fade-up" data-delay="200">Transforming data into intelligence. Crafting AI/ML solutions that drive innovation, <b>unlock insights, and deliver measurable impact.Building tomorrow's intelligent systems, today.</b></p>
+        </div>
+        <div class="banner-images">
+            <img src="shamique khan photos/WhatsApp Image 2026-01-08 at 10.23.34 PM.jpeg" alt="AI Projects" data-animate="fade-right" data-delay="100">
+            <img src="shamique khan photos/1000060029.jpg" alt="Data Science" data-animate="fade-up" data-delay="200">
+            <img src="shamique khan photos/IMG_20260103_152905572~2.jpg" alt="Machine Learning" data-animate="fade-left" data-delay="300">
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-main">
+        <h2 class="section-title-large" data-animate="fade-up">PORTFOLIO</h2>
+        <div class="portfolio-content-grid">
+            <div class="portfolio-left">
+                <img src="photos\IMG_20260103_160220758 (1) (1) (1).jpg" alt="Shamique Khan" class="portfolio-main-image" data-animate="fade-right">
+                <div class="portfolio-quote left-quote" data-animate="fade-up" data-delay="100">
+                    <p>"The only way to do great work is to love what you do."</p>
+                    <span>- Steve Jobs</span>
+                </div>
+            </div>
+            <div class="portfolio-right">
+                <h3 class="portfolio-name" data-animate="fade-left">SHAMIQUE KHAN</h3>
+                <p class="portfolio-description">
+                    An AI/ML enthusiast and data science practitioner from VIT Bhopal, currently serving as Research Associate at PredictRAM , developing quantitative models and algorithmic trading strategies. My journey spans from Harvard's CS50 AI along with 40+ certifications and 22+ repositories showcasing expertise in machine learning, deep learning, NLP, and computer vision.
+                </p>
+                
+                <div class="portfolio-text-image-row">
+                    <div class="portfolio-text-column">
+                        <p class="portfolio-description">
+                            As Campus Ambassador for eDC IIT Delhi and Core Member of FinTech Club VIT, I bridge innovation and implementation. With 10,000+ lines of production code and projects achieving industry-grade accuracy (+18.50% ROI on AI Investment Advisor), I build AI systems that deliver measurable impact. Beyond code, I capture stories through photography.
+                        </p>
+                    </div>
+                    <div class="portfolio-image-column">
+                        <img src="shamique khan photos\WhatsApp Image 2026-01-09 at 3.13.35 AM.jpeg" alt="Shamique Khan Project 1">
+                    </div>
+                </div>
+                
+                <div class="portfolio-mini-grid">
+                    <img src="shamique khan photos\WhatsApp Image 2026-01-09 at 3.15.26 AM.jpeg" alt="Shamique Khan Project 2">
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Combined About & Portfolio Section -->
+    <section class="combined-about-portfolio">
+        <div class="dual-tone-container">
+            <!-- Left Side - Cream Background with About Stats -->
+            <div class="left-panel" data-animate="slide-left">
+                <h2 class="section-title-large red" data-animate="fade-up" data-delay="100">ABOUT</h2>
+                <div class="stats-grid-vertical">
+                    <div class="stat-box" data-animate="scale" data-delay="200">
+                        <h3>10K+</h3>
+                        <p>Lines of Code</p>
+                    </div>
+                    <div class="stat-box" data-animate="scale" data-delay="300">
+                        <h3>250+</h3>
+                        <p>GitHub Commits</p>
+                    </div>
+                    <div class="stat-box" data-animate="scale" data-delay="400">
+                        <h3>10+</h3>
+                        <p>Major Projects</p>
+                    </div>
+                    <div class="stat-box" data-animate="scale" data-delay="500">
+                        <h3>40+</h3>
+                        <p>Certifications</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Red Background with Portrait Series -->
+            <div class="right-panel" data-animate="slide-right">
+                <div class="portrait-images">
+                    <img src="shamique khan photos/IMG_20260103_152906402~2.jpg" alt="Skill 1" data-animate="scale" data-delay="100">
+                    <img src="shamique khan photos/IMG_20260103_160707787 (1).jpg" alt="Skill 2" data-animate="scale" data-delay="200">
+                    <img src="shamique khan photos/IMG_20260103_160722011 (2).jpg" alt="Skill 3" data-animate="scale" data-delay="300">
+                </div>
+                <div class="portrait-text">
+                    <h2 class="portrait-title" data-animate="fade-up" data-delay="100">PROJECT<br>SERIES</h2>
+                    <p class="portrait-description" data-animate="fade-up" data-delay="200">A curated collection showcasing technical mastery across Machine Learning, Deep Learning, Natural Language Processing, and Data Science. Each project demonstrates precision, innovation, and a commitment to excellence in solving complex computational challenges.</p>
+                    <a href="projects.html" class="view-projects-btn" data-animate="fade-up" data-delay="300">
+                        <i class="fas fa-folder-open"></i> VIEW ALL PROJECTS
+                    </a>
+                </div>
+                
+                <!-- Professional Network Stats -->
+                <div class="github-overview">
+                    <h3 class="overview-title" data-animate="fade-up" data-delay="400">Professional Network</h3>
+                    <div class="github-stats-grid">
+                        <div class="github-stat" data-animate="fade-up" data-delay="450">
+                            <h4>22</h4>
+                            <p>Repositories</p>
+                        </div>
+                        <div class="github-stat" data-animate="fade-up" data-delay="500">
+                            <h4>1.6K+</h4>
+                            <p>LinkedIn</p>
+                        </div>
+                        <div class="github-stat" data-animate="fade-up" data-delay="550">
+                            <h4>12</h4>
+                            <p>GitHub</p>
+                        </div>
+                        <div class="github-stat" data-animate="fade-up" data-delay="600">
+                            <h4>100%</h4>
+                            <p>Open Source</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photography Hobby Section -->
+    <section class="fashion-section">
+        <div class="fashion-header">
+            <h2 class="section-title-large red" data-animate="fade-up">PHOTOGRAPHY<br>AS HOBBY</h2>
+            <p class="fashion-description" data-animate="fade-up" data-delay="100">Beyond algorithms and code lies a passion for visual storytelling. Through the lens, I capture life's intricate details—from sweeping landscapes to intimate portraits. Each frame is a testament to creative vision, technical precision, and the art of finding beauty in both the ordinary and extraordinary.</p>
+            <a href="https://www.instagram.com/capturing._.life18" target="_blank" class="insta-handle" data-animate="fade-up" data-delay="200">
+                <i class="fab fa-instagram"></i> @capturing._.life18
+            </a>
+        </div>
+        
+        <div class="photo-collage">
+            <div class="collage-item medium" data-animate="scale" data-delay="0">
+                <img src="photography as hobby/WhatsApp Image 2026-01-08 at 10.15.07 PM.jpeg" alt="Photography 1">
+            </div>
+            <div class="collage-item text-overlay" data-animate="fade-up" data-delay="50">
+                <div class="overlay-text">
+                    <p>I am creating<br>the life<br>of my<br>dreams.</p>
+                </div>
+            </div>
+            <div class="collage-item medium" data-animate="scale" data-delay="100">
+                <img src="photography as hobby/IMG_20251017_142207782.jpg" alt="Photography 2">
+            </div>
+            <div class="collage-item large" data-animate="scale" data-delay="150">
+                <img src="photography as hobby/IMG_20251108_172027325.jpg" alt="Photography 3">
+            </div>
+            <div class="collage-item medium" data-animate="scale" data-delay="200">
+                <img src="photography as hobby/IMG_20260103_154240658 (1).jpg" alt="Photography 4">
+            </div>
+            <div class="collage-item medium" data-animate="scale" data-delay="250">
+                <img src="photography as hobby/IMG_20251017_143019019.jpg" alt="Photography 5">
+            </div>
+            <div class="collage-item text-overlay center" data-animate="fade-up" data-delay="300">
+                <div class="overlay-text">
+                    <p>\"You <em>can</em> create<br>the life<br>you want\"</p>
+                </div>
+            </div>
+            <div class="collage-item medium" data-animate="scale" data-delay="350">
+                <img src="photography as hobby/IMG_20251102_132925356.jpg" alt="Photography 6">
+            </div>
+            <div class="collage-item large" data-animate="scale" data-delay="400">
+                <img src="photography as hobby/IMG_20251126_110605665.jpg" alt="Photography 7">
+            </div>
+            <div class="collage-item medium" data-animate="scale" data-delay="450">
+                <img src="photography as hobby/IMG_20260101_152954066 (1).jpg" alt="Photography 8">
+            </div>
+            <div class="collage-item text-overlay right" data-animate="fade-up" data-delay="500">
+                <div class="overlay-text">
+                    <p>I am becoming the<br><em>best</em> version of<br>myself.</p>
+                </div>
+            </div>
+            <div class="collage-item medium" data-animate="scale" data-delay="550">
+                <img src="photography as hobby/WhatsApp Image 2026-01-08 at 10.15.08 PM.jpeg" alt="Photography 9">
+            </div>
+            <div class="collage-item medium" data-animate="scale" data-delay="600">
+                <img src="photography as hobby/IMG_20260103_140908769 (1).jpg" alt="Photography 10">
+            </div>
+            <div class="collage-item text-overlay" data-animate="fade-up" data-delay="650">
+                <div class="overlay-text">
+                    <p>FOCUS<br>ON<br>THE<br>GOOD</p>
+                </div>
+            </div>
+            <div class="collage-item medium" data-animate="scale" data-delay="700">
+                <img src="photography as hobby/IMG_20260103_155139123 (1).jpg" alt="Photography 11">
+            </div>
+            <div class="collage-item text-overlay bottom" data-animate="fade-up" data-delay="750">
+                <div class="overlay-text">
+                    <p>WORK ON YOU,<br>FOR YOU.</p>
+                </div>
+            </div>
+            <div class="collage-item medium" data-animate="scale" data-delay="800">
+                <img src="photography as hobby/waterfront-boats.jpeg" alt="Waterfront Serenity">
+            </div>
+            <div class="collage-item medium" data-animate="scale" data-delay="850">
+                <img src="photography as hobby/foot-street.jpeg" alt="Street Food Experience">
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section class="awards-section">
+        <div class="certificates-header">
+            <h2 class="section-title-large awards-title" data-animate="fade-up">CERTIFICATES</h2>
+            <a href="certificates.html" class="view-all-btn" data-animate="fade-up" data-delay="100">VIEW ALL CERTIFICATES <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="awards-grid">
+            <div class="award-card" data-animate="fade-up" data-delay="0">
+                <img src="certificates/CS50AI shamique Khan_page-0001.jpg" alt="Certificate 1">
+                <div class="award-info">
+                    <span class="award-number">01</span>
+                    <div class="award-text">
+                        <h3>CS50 AI</h3>
+                        <p>Harvard University<br>Certificate</p>
+                    </div>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+            <div class="award-card" data-animate="fade-up" data-delay="100">
+                <img src="certificates/AppliedAILabDeepLearningforComputerVision20251220-32-d44vj7_page-0001.jpg" alt="Certificate 2">
+                <div class="award-info">
+                    <span class="award-number">02</span>
+                    <div class="award-text">
+                        <h3>DEEP LEARNING</h3>
+                        <p>Applied AI Lab<br>Computer Vision</p>
+                    </div>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+            <div class="award-card" data-animate="fade-up" data-delay="200">
+                <img src="certificates/IBM Data Science Professional Certificate_page-0001.jpg" alt="Certificate 3">
+                <div class="award-info">
+                    <span class="award-number">03</span>
+                    <div class="award-text">
+                        <h3>IBM DATA SCIENCE</h3>
+                        <p>IBM Professional<br>Certificate</p>
+                    </div>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+            <div class="award-card" data-animate="fade-up" data-delay="300">
+                <img src="certificates/eCertificate_page-0001.jpg" alt="Certificate 4">
+                <div class="award-info">
+                    <span class="award-number">04</span>
+                    <div class="award-text">
+                        <h3>ORACLE GEN AI</h3>
+                        <p>Oracle Certified<br>Professional</p>
+                    </div>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiences Section -->
+    <section class="experiences-section">
+        <h2 class="section-title-large experiences-title" data-animate="fade-up">EXPERIENCES</h2>
+        <div class="timeline-container">
+            <div class="timeline-item" data-animate>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <h3 class="timeline-title">Research Associate</h3>
+                        <span class="timeline-date">Present</span>
+                    </div>
+                    <p class="timeline-company">PredictRAM - SEBI Registered</p>
+                    <div class="timeline-card">
+                        <p class="timeline-desc">Developing advanced financial models and quantitative analysis frameworks for market prediction. Conducting cutting-edge research in algorithmic trading strategies and risk assessment for a SEBI-registered quantitative finance firm.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item" data-animate>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <h3 class="timeline-title">Social Media Team Core Member</h3>
+                        <span class="timeline-date">Dec 2025 - Present</span>
+                    </div>
+                    <p class="timeline-company">FinTech Club, VIT Bhopal</p>
+                    <div class="timeline-card">
+                        <p class="timeline-desc">Architecting and executing comprehensive social media strategies to amplify FinTech Club's digital presence. Spearheading content creation, photography, and multi-platform campaigns to drive engagement and build brand authority in the financial technology space.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item" data-animate>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <h3 class="timeline-title">Campus Ambassador</h3>
+                        <span class="timeline-date">Dec 2025 - Present</span>
+                    </div>
+                    <p class="timeline-company">eDC (Entrepreneurship Development Cell) IIT Delhi</p>
+                    <div class="timeline-card">
+                        <p class="timeline-desc">Serving as the institutional voice for IIT Delhi's premier entrepreneurship cell. Orchestrating outreach initiatives, cultivating startup culture, and bridging the gap between innovation ecosystems and student communities. Driving strategic partnerships and fostering entrepreneurial mindsets across campus.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item" data-animate>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <h3 class="timeline-title">AI Startup School Fellow</h3>
+                        <span class="timeline-date">2025</span>
+                    </div>
+                    <p class="timeline-company">Google for Startups</p>
+                    <div class="timeline-card">
+                        <p class="timeline-desc">Selected for Google's elite AI Startup School program. Mastered rapid AI-first prototyping, advanced prompt engineering, and generative AI development using Google AI Studio. Built production-ready AI applications and gained insights from Google's AI innovation leaders.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item" data-animate>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <h3 class="timeline-title">McKinsey Forward Program</h3>
+                        <span class="timeline-date">2025</span>
+                    </div>
+                    <p class="timeline-company">McKinsey & Company</p>
+                    <div class="timeline-card">
+                        <p class="timeline-desc">Completed McKinsey's prestigious Forward Program, developing world-class problem-solving frameworks, strategic thinking methodologies, and leadership competencies. Equipped with consulting-grade analytical tools and decision-making capabilities for navigating complex business challenges in the digital era.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Let's Work Together -->
+    <section class="work-together-section">
+        <div class="work-content">
+            <h2 class="work-title" data-animate="fade-up">LET'S WORK<br>TOGETHER</h2>
+            <i class="fas fa-arrow-right work-arrow" data-animate="scale" data-delay="100"></i>
+            <p class="work-description" data-animate="fade-up" data-delay="200">Ready to transform ideas into intelligent solutions.<br>Open to AI/ML engineering roles, data science opportunities,<br>quantitative research positions, and innovative collaborations.</p>
+            <div class="work-contact-info">
+                <div class="contact-email" data-animate="fade-up" data-delay="300">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:shamiquekhan18@gmail.com">shamiquekhan18@gmail.com</a>
+                </div>
+                <div class="social-icons-footer" data-animate="fade-up" data-delay="400">
+                    <a href="https://github.com/shamique-14" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/shamique-khan" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.instagram.com/shamique.win" target="_blank" title="Personal Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.instagram.com/capturing._.life18" target="_blank" title="Photography Instagram">
+                        <i class="fas fa-camera"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Intro Animation Script
+        const greetings = [
+            'Hello',      // English
+            'नमस्ते',      // Hindi
+            'Hola',       // Spanish
+            'Bonjour',    // French
+            'こんにちは',   // Japanese
+            'Ciao',       // Italian
+            'Hallo',      // German
+            'Olá',        // Portuguese
+            '你好',        // Chinese
+            '안녕하세요'    // Korean
+        ];
+
+        let currentIndex = 0;
+        const helloText = document.getElementById('helloText');
+        const overlay = document.getElementById('introOverlay');
+        
+        // Prevent scrolling during animation
+        document.body.classList.add('no-scroll');
+
+        function showNextGreeting() {
+            if (currentIndex < greetings.length) {
+                // Reset animation
+                helloText.style.animation = 'none';
+                setTimeout(() => {
+                    helloText.textContent = greetings[currentIndex];
+                    helloText.style.animation = 'fadeInOut 0.2s ease-in-out forwards';
+                }, 10);
+                
+                currentIndex++;
+                setTimeout(showNextGreeting, 220); // Show each greeting for 220ms
+            } else {
+                // All greetings shown, slide up overlay
+                setTimeout(() => {
+                    overlay.classList.add('slide-up');
+                    document.body.classList.remove('no-scroll');
+                    
+                    // Remove overlay from DOM after animation
+                    setTimeout(() => {
+                        overlay.style.display = 'none';
+                    }, 270);
+                }, 130);
+            }
+        }
+
+        // Start the animation when page loads
+        window.addEventListener('load', () => {
+            setTimeout(showNextGreeting, 70);
+        });
+    </script>
+
+    <script>
+        // Timeline Animation with Intersection Observer
+        const timelineItems = document.querySelectorAll('.timeline-item[data-animate]');
+        
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = entry.target.getAttribute('data-delay') || 0;
+                    setTimeout(() => {
+                        entry.target.classList.add('animate-in');
+                    }, parseInt(delay));
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all elements with data-animate attribute
+        const animatedElements = document.querySelectorAll('[data-animate]');
+        animatedElements.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+
+</body>
+</html>
