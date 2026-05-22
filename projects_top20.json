@@ -1,0 +1,162 @@
+[
+  {
+    "#": 1,
+    "Project": "AI-guest-messaging-automation-system",
+    "Category": "AI automation",
+    "Description": "AI guest-messaging automation system that triages inquiries, drafts context-aware replies, and routes messages automatically.",
+    "Tech stack / language": "Python",
+    "Status / notes": "Updated 2026-05-22"
+  },
+  {
+    "#": 2,
+    "Project": "Falcon-Landing-Analytics-End-to-End-Machine-Learning-Pipeline",
+    "Category": "ML pipeline",
+    "Description": "End-to-end ML pipeline for SpaceX Falcon 9 with ingest, SQL, analytics, modeling, and Streamlit dashboards.",
+    "Tech stack / language": "Jupyter Notebook",
+    "Status / notes": "Updated 2026-04-07"
+  },
+  {
+    "#": 3,
+    "Project": "Market-Regime-Detection-System",
+    "Category": "Quant / finance",
+    "Description": "ML-powered market regime detection for the Indian stock market using HMM/GMM models, evaluation, and deployment framework.",
+    "Tech stack / language": "Python; MIT License",
+    "Status / notes": "Updated 2026-02-14"
+  },
+  {
+    "#": 4,
+    "Project": "nifty50-ai",
+    "Category": "Finance / trading",
+    "Description": "AI-powered NIFTY50 trading system with LSTM modeling, sentiment analysis, Kelly sizing, and auto-update pipeline.",
+    "Tech stack / language": "Python; MIT License",
+    "Status / notes": "Updated 2025-12-15"
+  },
+  {
+    "#": 5,
+    "Project": "ai-investment-advisor-agent",
+    "Category": "Finance / AI",
+    "Description": "AI investment advisor that scores stocks using sentiment, fundamentals, and technicals; paired with a Chrome extension and Python backend.",
+    "Tech stack / language": "Python",
+    "Status / notes": "Updated 2025-12-07"
+  },
+  {
+    "#": 6,
+    "Project": "Tensorflow_rag_Q-A_application",
+    "Category": "RAG / LLM app",
+    "Description": "RAG Q&A app over TensorFlow docs with crawl → embed → index → answer flow, vector DB, GPT-4, web UI, and CLI.",
+    "Tech stack / language": "Python",
+    "Status / notes": "Updated 2025-12-20"
+  },
+  {
+    "#": 7,
+    "Project": "FinCheck",
+    "Category": "Security / browser extension",
+    "Description": "Real-time scam/phishing detector and credibility verifier built as a Chrome extension with Python APIs.",
+    "Tech stack / language": "Python; MIT License",
+    "Status / notes": "Updated 2025-12-23"
+  },
+  {
+    "#": 8,
+    "Project": "SK-AutoD-ML-Library-for-Training-Curve-Auto-Diagnostician",
+    "Category": "ML tooling",
+    "Description": "Auto-diagnoses deep learning training pathologies such as overfitting, unstable learning rates, exploding gradients, noisy training, and early stopping issues.",
+    "Tech stack / language": "machine-learning; python-library; ml; model-diagnostics; model-optimization; HTML",
+    "Status / notes": "Updated 2026-05-12"
+  },
+  {
+    "#": 9,
+    "Project": "Patient_Risk_Assessment_System",
+    "Category": "Healthcare ML",
+    "Description": "Patient risk stratification with ML models and Streamlit; the repo description mentions AUC/ROC around 0.90.",
+    "Tech stack / language": "Python",
+    "Status / notes": "Updated 2025-12-20"
+  },
+  {
+    "#": 10,
+    "Project": "neuromorphic-sleep-staging-pipeline-project",
+    "Category": "Deep learning",
+    "Description": "End-to-end deep learning pipeline for automatic sleep stage classification from polysomnography signals.",
+    "Tech stack / language": "Jupyter Notebook; deep-learning; sleep-eeg; sleep-staging; sleep-edf; neuromorphic-systems",
+    "Status / notes": "Updated 2026-05-06"
+  },
+  {
+    "#": 11,
+    "Project": "mediarchive",
+    "Category": "Healthcare / frontend",
+    "Description": "MediArchive is a unified health data system linking patients, doctors, and hospitals through a secure digital health ID.",
+    "Tech stack / language": "CSS; React mentioned",
+    "Status / notes": "Updated 2026-02-12"
+  },
+  {
+    "#": 12,
+    "Project": "GreenMagic",
+    "Category": "AI / creativity",
+    "Description": "AI air-writing system using MediaPipe hand tracking, OCR, generative graphics overlays, and voice feedback.",
+    "Tech stack / language": "Python",
+    "Status / notes": "Updated 2025-12-22"
+  },
+  {
+    "#": 13,
+    "Project": "Sensex-Heston-ML-Calibration-Tool",
+    "Category": "Quant finance",
+    "Description": "Machine learning system designed to speed up Heston-model calibration for live markets.",
+    "Tech stack / language": "Python; MIT License",
+    "Status / notes": "Updated 2025-12-22"
+  },
+  {
+    "#": 14,
+    "Project": "Constitutional-AI",
+    "Category": "AI safety",
+    "Description": "Repository listed on the profile with Python and MIT License visible in the list.",
+    "Tech stack / language": "Python; MIT License",
+    "Status / notes": "Updated 2026-01-06"
+  },
+  {
+    "#": 15,
+    "Project": "Legal-AI",
+    "Category": "AI / legal",
+    "Description": "Repository listed on the profile with Python and MIT License visible in the list.",
+    "Tech stack / language": "Python; MIT License",
+    "Status / notes": "Updated 2026-01-11"
+  },
+  {
+    "#": 16,
+    "Project": "Mechanistic-Transparency-in-Neural-Networks-A-Four-Layer-Analysis",
+    "Category": "Interpretability",
+    "Description": "Four-phase mechanistic interpretability pipeline focused on transparency and controllability in neural networks.",
+    "Tech stack / language": "Python",
+    "Status / notes": "Updated 2025-12-29"
+  },
+  {
+    "#": 17,
+    "Project": "Weather-Trend-Forecasting",
+    "Category": "Data science",
+    "Description": "Weather dataset analysis deliverable with cleaned data, EDA, and forecasting approaches.",
+    "Tech stack / language": "Jupyter Notebook; python; data-science; eda; weather-forecast",
+    "Status / notes": "Updated 2026-05-21"
+  },
+  {
+    "#": 18,
+    "Project": "transfer_learning_food_vision",
+    "Category": "Computer vision",
+    "Description": "Transfer-learning food-vision notebook repository with MIT License visible in the list.",
+    "Tech stack / language": "Jupyter Notebook; MIT License",
+    "Status / notes": "Updated 2026-04-27"
+  },
+  {
+    "#": 19,
+    "Project": "Quantum_System_Solver_Project_streamlit",
+    "Category": "Physics / Streamlit",
+    "Description": "Interactive Streamlit app for 1D quantum-in-a-box mechanics, waves, probability, and energy visualizations.",
+    "Tech stack / language": "Python",
+    "Status / notes": "Updated 2025-11-30"
+  },
+  {
+    "#": 20,
+    "Project": "mlp-classifier-project",
+    "Category": "ML / PyTorch",
+    "Description": "Self-contained PyTorch MLP classifier project with a detailed README and reusable training script.",
+    "Tech stack / language": "JavaScript (visible list language); PyTorch noted in description",
+    "Status / notes": "Updated 2026-05-05"
+  }
+]

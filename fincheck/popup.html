@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinCheck - Scam Detector</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FinCheck</h1>
+            <p class="subtitle">Financial Content Verifier</p>
+        </header>
+
+        <main id="main-content">
+            <!-- Content Analysis Section -->
+            <section class="analysis-section">
+                <h2>Current Page Analysis</h2>
+                <div id="loading" class="loading hidden">
+                    <div class="spinner"></div>
+                    <p>Analyzing content...</p>
+                </div>
+                
+                <div id="results" class="hidden">
+                    <!-- Scam Risk -->
+                    <div class="result-card">
+                        <h3>Scam Risk</h3>
+                        <div class="risk-meter">
+                            <div id="scam-risk" class="risk-bar"></div>
+                        </div>
+                        <p id="scam-message" class="risk-message"></p>
+                    </div>
+
+                    <!-- Influencer Credibility -->
+                    <div class="result-card">
+                        <h3>Influencer Credibility</h3>
+                        <div id="credibility-score" class="credibility-badge"></div>
+                        <p id="credibility-message"></p>
+                    </div>
+
+                    <!-- Deepfake Detection -->
+                    <div class="result-card">
+                        <h3>Content Authenticity</h3>
+                        <div id="deepfake-risk" class="authenticity-badge"></div>
+                        <p id="deepfake-message"></p>
+                    </div>
+
+                    <!-- Key Warnings -->
+                    <div class="result-card warning-card" id="warnings-card" style="display:none;">
+                        <h3>⚠️ Warnings Detected</h3>
+                        <ul id="warnings-list"></ul>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button id="report-btn" class="btn btn-primary">Report Content</button>
+                        <button id="details-btn" class="btn btn-secondary">View Details</button>
+                    </div>
+                </div>
+
+                <div id="error" class="error-message hidden">
+                    <p id="error-text"></p>
+                </div>
+            </section>
+
+            <!-- Quick Stats -->
+            <section class="stats-section">
+                <h2>Your Protection</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number" id="pages-checked">0</span>
+                        <span class="stat-label">Pages Checked</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="scams-blocked">0</span>
+                        <span class="stat-label">Scams Blocked</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="users-protected">0</span>
+                        <span class="stat-label">Users Protected</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings -->
+            <section class="settings-section">
+                <button id="settings-btn" class="btn-settings">⚙️ Settings</button>
+                <div id="settings-panel" class="hidden">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="auto-analyze" checked>
+                        Auto-analyze pages
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="show-warnings" checked>
+                        Show all warnings
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="enable-notifications" checked>
+                        Enable notifications
+                    </label>
+                    <button id="reset-stats-btn" class="btn btn-danger">Reset Statistics</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Made with ❤️ for Indian investors</p>
+            <p class="footer-links">
+                <a href="https://github.com" target="_blank">GitHub</a> | 
+                <a href="https://twitter.com" target="_blank">Twitter</a> | 
+                <a href="#" id="feedback-btn">Feedback</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

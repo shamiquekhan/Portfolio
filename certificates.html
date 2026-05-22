@@ -3,398 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certificates - Shamique Khan</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="style-modern.css">
+    <title>Certificates — Shamique Khan</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cinzel:wght@400;500;600;700;800;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Page Header */
-        .cert-page-header {
-            background: var(--white);
-            padding: 2.5rem 3rem;
-            border-bottom: 1px solid var(--cream);
-        }
-
-        .cert-back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            color: var(--red);
-            text-decoration: none;
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: gap 0.3s ease;
-            margin-bottom: 1.5rem;
-        }
-
-        .cert-back-btn:hover {
-            gap: 1.2rem;
-        }
-
-        .cert-page-title {
-            font-family: 'Cinzel', serif;
-            font-size: 6rem;
-            color: var(--red);
-            line-height: 0.9;
-            margin-bottom: 1rem;
-        }
-
-        .cert-page-subtitle {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: var(--gray);
-            max-width: 700px;
-        }
-
-        /* Filter Section */
-        .cert-filter-section {
-            background: var(--cream);
-            padding: 2rem 3rem;
-            text-align: center;
-        }
-
-        .cert-filter-btn {
-            background: transparent;
-            border: none;
-            color: var(--gray);
-            padding: 0.75rem 1.5rem;
-            margin: 0 0.5rem;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .cert-filter-btn::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background: var(--red);
-            transition: width 0.3s ease;
-        }
-
-        .cert-filter-btn:hover,
-        .cert-filter-btn.active {
-            color: var(--red);
-        }
-
-        .cert-filter-btn.active::after {
-            width: 80%;
-        }
-
-        /* Certificates Grid */
-        .cert-main-content {
-            background: var(--white);
-            padding: 3rem;
-            min-height: 100vh;
-        }
-
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .cert-item {
-            background: var(--cream);
-            overflow: hidden;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border-left: 4px solid transparent;
-        }
-
-        .cert-item:hover {
-            border-left-color: var(--red);
-            transform: translateX(5px);
-            box-shadow: 0 5px 20px rgba(139, 26, 26, 0.1);
-        }
-
-        .cert-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .cert-item.placeholder img {
-            object-fit: contain;
-            background: var(--white);
-            padding: 3rem;
-        }
-
-        .cert-placeholder-icon {
-            width: 100%;
-            height: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--white);
-            color: var(--red);
-            font-size: 5rem;
-            cursor: not-allowed;
-        }
-
-        .cert-info {
-            padding: 1.5rem;
-        }
-
-        .cert-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--black);
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-        }
-
-        .cert-issuer {
-            font-size: 0.9rem;
-            color: var(--red);
-            margin-bottom: 0.75rem;
-            font-weight: 600;
-        }
-
-        .cert-category {
-            display: inline-block;
-            font-size: 0.75rem;
-            color: var(--gray);
-            background: var(--white);
-            padding: 0.3rem 0.8rem;
-            border-radius: 3px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 600;
-        }
-
-        /* Modal */
-        .cert-modal {
-            display: none;
-            position: fixed;
-            z-index: 10000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            align-items: center;
-            justify-content: center;
-        }
-
-        .cert-modal.active {
-            display: flex;
-        }
-
-        .cert-modal-content {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-        }
-
-        .cert-modal-close {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            font-size: 3rem;
-            color: white;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .cert-modal-close:hover {
-            color: var(--red);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .cert-page-title {
-                font-size: 4rem;
-            }
-
-            .cert-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cert-filter-btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.8rem;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@320;330;400;480;540;700&family=IBM+Plex+Mono:wght@400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-portfolio.css">
 </head>
 <body>
-
-    <!-- Header -->
-    <section class="cert-page-header">
-        <a href="index.html" class="cert-back-btn">
-            <i class="fas fa-arrow-left"></i> BACK TO PORTFOLIO
-        </a>
-        <h1 class="cert-page-title">CERTIFICATES<br>& CREDENTIALS</h1>
-        <p class="cert-page-subtitle">
-            A comprehensive collection of professional certifications spanning AI/ML, Data Science, Cloud Computing, and Business Innovation. Each credential represents a commitment to continuous learning and mastery in cutting-edge technologies.
-        </p>
-    </section>
-
-    <!-- Filter Section -->
-    <section class="cert-filter-section">
-        <button class="cert-filter-btn active" onclick="filterCerts('all')">ALL</button>
-        <button class="cert-filter-btn" onclick="filterCerts('ai-ml')">AI & ML</button>
-        <button class="cert-filter-btn" onclick="filterCerts('data-science')">DATA SCIENCE</button>
-        <button class="cert-filter-btn" onclick="filterCerts('cloud')">CLOUD & TECH</button>
-        <button class="cert-filter-btn" onclick="filterCerts('business')">BUSINESS</button>
-    </section>
-
-    <!-- Certificates Grid -->
-    <section class="cert-main-content">
-        <div class="cert-grid" id="certGrid">
-            <!-- Certificates will be populated here by JavaScript -->
+    <header class="topbar shell">
+        <a class="brand" href="index.html">Shamique Khan</a>
+        <nav class="topnav" aria-label="Primary">
+            <a href="index.html#about">About</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+        <div class="topbar-actions">
+            <a class="pill pill-secondary" href="projects.html">Projects</a>
+            <a class="pill pill-primary" href="mailto:shamiquekhan18@gmail.com">Get In Touch</a>
         </div>
-    </section>
+    </header>
 
-    <!-- Modal -->
-    <div id="certModal" class="cert-modal" onclick="closeModal()">
-        <span class="cert-modal-close">&times;</span>
-        <img class="cert-modal-content" id="modalImage">
+    <main class="shell page-stack">
+        <section class="story panel block-mint">
+            <div class="section-head">
+                <p class="eyebrow mono">Certificates</p>
+                <h2>Courses, credentials, and assessments</h2>
+            </div>
+            <p class="lead">Selected credentials in machine learning, cloud, finance, and data science.</p>
+        </section>
+
+        <section class="card-grid cards-2" id="certGrid"></section>
+
+        <section class="story panel block-lilac">
+            <div class="footer-copy">
+                <p class="eyebrow mono">Contact</p>
+                <h2>Need verification or a certificate walkthrough?</h2>
+                <p>Reach out directly for details about coursework, credentials, or related project context.</p>
+                <div class="hero-actions">
+                    <a class="pill pill-primary" href="mailto:shamiquekhan18@gmail.com">Email Me</a>
+                    <a class="pill pill-secondary" href="index.html#publications">Publications</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="cert-modal" id="modal" aria-hidden="true">
+        <button class="cert-close" id="closeModal" aria-label="Close certificate">×</button>
+        <img id="modalImage" alt="Certificate preview">
     </div>
 
     <script>
-        // Certificate data - mapped to actual files
         const certificates = [
-            { img: 'CS50AI shamique Khan_page-0001.jpg', title: 'CS50 AI with Python', issuer: 'Harvard University', category: 'ai-ml' },
-            { img: 'AppliedAILabDeepLearningforComputerVision20251220-32-d44vj7_page-0001.jpg', title: 'Deep Learning for Computer Vision', issuer: 'WorldQuant University', category: 'ai-ml' },
-            { img: 'IBM Data Science Professional Certificate_page-0001.jpg', title: 'Data Science Professional', issuer: 'IBM', category: 'data-science' },
-            { img: 'eCertificate_page-0001.jpg', title: 'Oracle Cloud Infrastructure 2025 Certified Generative AI Professional', issuer: 'Oracle', category: 'ai-ml' },
-            { img: 'placeholder', title: 'Natural Language Processing', issuer: 'Applied AI Lab', category: 'ai-ml' },
-            { img: 'Coursera rag certification_page-0001.jpg', title: 'Retrieval-Augmented Generation (RAG)', issuer: 'Coursera', category: 'ai-ml' },
-            { img: 'McKinsey.orgForward20251210-33-l8dkde_page-0001.jpg', title: 'McKinsey Forward Program', issuer: 'McKinsey & Company', category: 'business' },
-            { img: 'io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_9EBEoodwiyWzaMeFT_1750867337413_completion_certificate_page-0001.jpg', title: 'AI Startup School', issuer: 'Google for Startups', category: 'business' },
-            { img: 'Certificate_8534880680_07012026022317_page-0001.jpg', title: 'SEBI Investor Awareness Test', issuer: 'Securities and Exchange Board of India', category: 'business' },
-            { img: 'placeholder', title: 'Creating Change through Social Entrepreneurship', issuer: 'Yale University', category: 'business' },
-            { img: 'shamique-course_end_quiz-Certificate-EN-Diving-into-Radical-Creativity (1)_page-0001.jpg', title: 'Diving into Radical Creativity', issuer: 'Aalto University', category: 'business' },
-            { img: 'placeholder', title: 'German Language Course', issuer: 'American University', category: 'business' },
-            { img: 'Coursera SG1IG2GZP1ZX_page-0001.jpg', title: 'MBA Essentials', issuer: 'University of Glasgow', category: 'business' },
-            { img: 'Machine Learning Algorithms_page-0001.jpg', title: 'Machine Learning Algorithms: Supervised Learning', issuer: 'Amii (Alberta Machine Intelligence Institute)', category: 'ai-ml' },
-            { img: 'nlp with tersorflow_page-0001.jpg', title: 'Natural Language Processing in TensorFlow', issuer: 'DeepLearning.AI', category: 'ai-ml' },
-            { img: 'prepare-data-for-ml-apis-on-google-cloud-skill-badg.png', title: 'Prepare Data for ML APIs on Google Cloud', issuer: 'Google', category: 'cloud' },
-            { img: 'Coursera gen ai in ds_page-0001.jpg', title: 'Generative AI: Elevate Your Data Science Career', issuer: 'IBM', category: 'ai-ml' },
-            { img: 'crpto certificate_page-0001.jpg', title: 'Blockchain and Cryptocurrency Explained', issuer: 'University of Michigan', category: 'cloud' },
-            { img: 'Shamique Khan - Intermediate Machine Learning.png', title: 'Intermediate Machine Learning', issuer: 'Kaggle', category: 'ai-ml' },
-            { img: 'placeholder', title: 'Intro to Machine Learning', issuer: 'Kaggle', category: 'ai-ml' },
-            { img: 'Certificate_8534880680_03122025124618_page-0001.jpg', title: 'Introduction to Large Language Models', issuer: 'Google Cloud', category: 'ai-ml' },
-            { img: 'Coursera AI for Everyone_page-0001.jpg', title: 'AI For Everyone', issuer: 'DeepLearning.AI', category: 'ai-ml' },
-            { img: 'Nvidia AI Intra and Operations Fundamentals_page-0001.jpg', title: 'AI Infrastructure and Operations Fundamentals', issuer: 'NVIDIA', category: 'cloud' },
-            { img: 'unstop IIT ropar Hachathon Certificate _page-0001.jpg', title: 'Gen AI Hackathon Participation', issuer: 'IIT Ropar', category: 'ai-ml' },
-            { img: 'Fundamentals of Finance UCI_page-0001.jpg', title: 'Fundamentals of Finance', issuer: 'UC Irvine', category: 'business' },
-            { img: 'placeholder', title: 'J.P. Morgan Investment Banking Job Simulation', issuer: 'Forage', category: 'business' },
-            { img: 'coursera uol ML for all_page-0001.jpg', title: 'Machine Learning for All', issuer: 'University of London', category: 'ai-ml' },
-            { img: 'ibm machine learning Certificate_page-0001.jpg', title: 'Machine Learning with Python', issuer: 'IBM', category: 'ai-ml' },
-            { img: 'placeholder', title: 'MongoDB Basics for Students', issuer: 'MongoDB', category: 'cloud' },
-            { img: 'IBMDesign20250813-31-lwb1ms_page-0001.jpg', title: 'Data Analysis with Python', issuer: 'IBM', category: 'data-science' },
-            { img: 'Coursera Data visualisation with python 8_page-0001.jpg', title: 'Data Visualization with Python', issuer: 'IBM', category: 'data-science' },
-            { img: 'sql certi_page-0001.jpg', title: 'Databases and SQL for Data Science', issuer: 'IBM', category: 'data-science' },
-            { img: 'Certificate_8534880680_03122025124717_page-0001.jpg', title: 'Introduction to Responsible AI', issuer: 'Google Cloud Security', category: 'ai-ml' },
-            { img: 'certificate_SHAMIQUE_KHAN_page-0001.jpg', title: 'Python Essentials', issuer: 'Vityarthi', category: 'data-science' },
-            { img: '20240716890312078_page-0001.jpg', title: 'Python for Data Science, AI & Development', issuer: 'IBM', category: 'data-science' },
-            { img: 'artificial-intelligence-fundamentals.png', title: 'Artificial Intelligence Fundamentals', issuer: 'IBM', category: 'ai-ml' },
-            { img: 'placeholder', title: 'Google Analytics Certification', issuer: 'Google Digital Academy', category: 'data-science' },
-            { img: '_certificate_shamiquekhan18-gmail-com_f200fff8-7ef2-4e26-97e7-5e95765c9f2e_page-0001.jpg', title: 'Prompt Engineering & Programming with OpenAI', issuer: 'Columbia+', category: 'ai-ml' },
-            { img: 'certificate_SHAMIQUE_KHAN (1)_page-0001.jpg', title: 'Python Essentials 1', issuer: 'Cisco', category: 'data-science' },
-            { img: 'placeholder', title: 'Python Essentials 2', issuer: 'Cisco', category: 'data-science' },
-            { img: 'placeholder', title: 'YouTube Labs - MCP', issuer: 'KodeKloud', category: 'cloud' },
-            { img: 'placeholder', title: 'Deloitte Australia Data Analytics Job Simulation', issuer: 'Forage', category: 'data-science' },
-            { img: 'placeholder', title: 'Hands-On Version Control with Git', issuer: 'Infosys Springboard', category: 'cloud' },
-            { img: 'placeholder', title: 'Mastering Python', issuer: 'Infosys Springboard', category: 'data-science' },
-            { img: 'CSE1021_INTRODUCTION-TO-PROBLEM-SOLVING-AND-PROGRAMMING_LTP_1.0_1_CSE1021_IPSP (2)_page-0001.jpg', title: 'Introduction to Problem Solving and Programming', issuer: 'VIT Bhopal', category: 'data-science' },
-            { img: 'SHAMIQUE KHAN.certificate_page-0001.jpg', title: 'Web Development Certificate', issuer: 'Infosys Springboard', category: 'cloud' },
-            { img: 'prompt-design-in-vertex-ai-skill-badge.png', title: 'Prompt Design in Vertex AI', issuer: 'Google Cloud', category: 'ai-ml' }
+            {
+                title: 'CS50 AI',
+                issuer: 'Harvard',
+                image: 'certificates/CS50AI shamique Khan_page-0001.jpg'
+            },
+            {
+                title: 'IBM Data Science Professional Certificate',
+                issuer: 'IBM',
+                image: 'certificates/IBM Data Science Professional Certificate_page-0001.jpg'
+            },
+            {
+                title: 'NVIDIA AI Intra and Operations Fundamentals',
+                issuer: 'Oracle',
+                image: 'certificates/Nvidia AI Intra and Operations Fundamentals_page-0001.jpg'
+            },
+            {
+                title: 'Fundamentals of Finance',
+                issuer: 'SEBI',
+                image: 'certificates/Fundamentals of Finance UCI_page-0001.jpg'
+            },
+            {
+                title: 'Data Visualisation with Python',
+                issuer: 'Coursera',
+                image: 'certificates/Coursera Data visualisation with python 8_page-0001.jpg'
+            },
+            {
+                title: 'Machine Learning Algorithms',
+                issuer: 'DeepLearning.AI',
+                image: 'certificates/Machine Learning Algorithms_page-0001.jpg'
+            }
         ];
 
-        // Render certificates
-        function renderCertificates(filter = 'all') {
-            const grid = document.getElementById('certGrid');
-            grid.innerHTML = '';
+        const grid = document.getElementById('certGrid');
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modalImage');
+        const closeModal = document.getElementById('closeModal');
 
-            const filtered = filter === 'all' 
-                ? certificates 
-                : certificates.filter(cert => cert.category === filter);
-
-            filtered.forEach(cert => {
-                const certCard = document.createElement('div');
-                certCard.className = 'cert-item';
-                certCard.setAttribute('data-category', cert.category);
-                
-                // Check if placeholder
-                if (cert.img === 'placeholder') {
-                    certCard.classList.add('placeholder');
-                    certCard.innerHTML = `
-                        <div class="cert-placeholder-icon">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <div class="cert-info">
-                            <h3 class="cert-title">${cert.title}</h3>
-                            <p class="cert-issuer">${cert.issuer}</p>
-                            <span class="cert-category">${cert.category.replace('-', ' & ').toUpperCase()}</span>
-                        </div>
-                    `;
-                } else {
-                    certCard.innerHTML = `
-                        <img src="certificates/${cert.img}" alt="${cert.title}" onclick="openModal('certificates/${cert.img}')">
-                        <div class="cert-info">
-                            <h3 class="cert-title">${cert.title}</h3>
-                            <p class="cert-issuer">${cert.issuer}</p>
-                            <span class="cert-category">${cert.category.replace('-', ' & ').toUpperCase()}</span>
-                        </div>
-                    `;
-                }
-                grid.appendChild(certCard);
-            });
-        }
-
-        // Filter certificates
-        function filterCerts(category) {
-            const buttons = document.querySelectorAll('.cert-filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            renderCertificates(category);
-        }
-
-        // Modal functions
-        function openModal(src) {
-            const modal = document.getElementById('certModal');
-            const modalImg = document.getElementById('modalImage');
+        function openModal(src, title) {
+            modalImage.src = src;
+            modalImage.alt = title;
             modal.classList.add('active');
-            modalImg.src = src;
+            modal.setAttribute('aria-hidden', 'false');
         }
 
-        function closeModal() {
-            document.getElementById('certModal').classList.remove('active');
+        function hideModal() {
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+            modalImage.src = '';
         }
 
-        // Close modal on Escape
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeModal();
+        grid.innerHTML = certificates.map((cert, index) => `
+            <article class="info-card">
+                <p class="card-meta">Certificate ${index + 1}</p>
+                <button class="ui-cert-button" type="button" data-src="${cert.image}" data-title="${cert.title}">
+                    <img src="${cert.image}" alt="${cert.title}">
+                </button>
+                <h3>${cert.title}</h3>
+                <p>${cert.issuer}</p>
+            </article>
+        `).join('');
+
+        grid.querySelectorAll('.ui-cert-button').forEach(button => {
+            button.addEventListener('click', () => openModal(button.dataset.src, button.dataset.title));
         });
 
-        // Initialize
-        renderCertificates();
-    </script>
+        closeModal.addEventListener('click', hideModal);
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                hideModal();
+            }
+        });
 
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                hideModal();
+            }
+        });
+    </script>
 </body>
 </html>
-

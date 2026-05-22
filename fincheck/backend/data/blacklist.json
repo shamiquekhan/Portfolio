@@ -1,0 +1,24 @@
+{
+  "scammers": [
+    {
+      "name": "FakeGuru_Finance",
+      "reason": "Pump and dump",
+      "reports": 150
+    },
+    {
+      "name": "CryptoScamBot",
+      "reason": "Deepfake promoter",
+      "reports": 200
+    },
+    {
+      "name": "QuickRichTips",
+      "reason": "Fraudulent investment schemes",
+      "reports": 120
+    },
+    {
+      "name": "InvestmentGenius99",
+      "reason": "Unregistered financial advisor",
+      "reports": 85
+    }
+  ]
+}

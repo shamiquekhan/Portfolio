@@ -3,460 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Shamique Khan</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="style-modern.css">
+    <title>Projects — Shamique Khan</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cinzel:wght@400;500;600;700;800;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Hero Section */
-        .project-hero {
-            background: var(--red);
-            padding: 5rem 3rem 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, var(--red) 0%, #6B0F0F 100%);
-            opacity: 0.9;
-        }
-
-        .project-hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .project-back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            color: var(--white);
-            text-decoration: none;
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: gap 0.3s ease;
-            margin-bottom: 2rem;
-        }
-
-        .project-back-btn:hover {
-            gap: 1.2rem;
-        }
-
-        .project-hero-title {
-            font-family: 'Cinzel', serif;
-            font-size: 8rem;
-            color: var(--white);
-            line-height: 0.85;
-            margin-bottom: 1.5rem;
-        }
-
-        .project-hero-subtitle {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: rgba(255, 255, 255, 0.85);
-            max-width: 800px;
-        }
-
-        /* Filter Section */
-        .project-filter-section {
-            background: var(--white);
-            padding: 2rem 3rem;
-            text-align: center;
-            border-bottom: 1px solid var(--cream);
-        }
-
-        .project-filter-btn {
-            background: transparent;
-            border: none;
-            color: var(--gray);
-            padding: 0.75rem 1.5rem;
-            margin: 0 0.5rem;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .project-filter-btn::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background: var(--red);
-            transition: width 0.3s ease;
-        }
-
-        .project-filter-btn:hover,
-        .project-filter-btn.active {
-            color: var(--red);
-        }
-
-        .project-filter-btn.active::after {
-            width: 80%;
-        }
-
-        /* Projects Grid */
-        .project-main-content {
-            background: var(--cream);
-            padding: 3rem;
-            min-height: 100vh;
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .project-card {
-            background: var(--white);
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border-bottom: 3px solid transparent;
-        }
-
-        .project-card:hover {
-            border-bottom-color: var(--red);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(139, 26, 26, 0.15);
-        }
-
-        .project-content {
-            padding: 2rem;
-        }
-
-        .project-category {
-            display: inline-block;
-            font-size: 0.7rem;
-            color: var(--white);
-            background: var(--red);
-            padding: 0.4rem 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .project-title {
-            font-family: 'Cinzel', serif;
-            font-size: 2rem;
-            color: var(--black);
-            line-height: 1.1;
-            margin-bottom: 1rem;
-        }
-
-        .project-description {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: var(--gray);
-            margin-bottom: 1.5rem;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .tech-tag {
-            font-size: 0.75rem;
-            color: var(--gray);
-            background: var(--cream);
-            padding: 0.3rem 0.8rem;
-            border-radius: 3px;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-            font-weight: 600;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--cream);
-        }
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--red);
-            text-decoration: none;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: gap 0.3s ease;
-        }
-
-        .project-link:hover {
-            gap: 0.8rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .project-hero-title {
-                font-size: 4.5rem;
-            }
-
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .project-filter-btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.8rem;
-                margin: 0.25rem;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@320;330;400;480;540;700&family=IBM+Plex+Mono:wght@400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-portfolio.css">
 </head>
 <body>
-
-    <!-- Hero Section -->
-    <section class="project-hero">
-        <div class="project-hero-content">
-            <a href="index.html" class="project-back-btn">
-                <i class="fas fa-arrow-left"></i> BACK TO PORTFOLIO
-            </a>
-            <h1 class="project-hero-title">PROJECTS &<br>REPOSITORIES</h1>
-            <p class="project-hero-subtitle">
-                A curated collection of AI/ML projects, web applications, and financial tools built with cutting-edge technologies. Each project showcases innovation in machine learning, data science, and full-stack development.
-            </p>
+    <header class="topbar shell">
+        <a class="brand" href="index.html">Shamique Khan</a>
+        <nav class="topnav" aria-label="Primary">
+            <a href="index.html#about">About</a>
+            <a href="index.html#education">Education</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+        <div class="topbar-actions">
+            <a class="pill pill-secondary" href="certificates.html">Certificates</a>
+            <a class="pill pill-primary" href="mailto:shamiquekhan18@gmail.com">Get In Touch</a>
         </div>
-    </section>
+    </header>
 
-    <!-- Filter Section -->
-    <section class="project-filter-section">
-        <button class="project-filter-btn active" onclick="filterProjects('all')">ALL</button>
-        <button class="project-filter-btn" onclick="filterProjects('ai-ml')">AI & ML</button>
-        <button class="project-filter-btn" onclick="filterProjects('finance')">FINANCE</button>
-        <button class="project-filter-btn" onclick="filterProjects('web')">WEB APPS</button>
-        <button class="project-filter-btn" onclick="filterProjects('data')">DATA SCIENCE</button>
-    </section>
+    <main class="shell page-stack">
+        <section class="story panel block-cream">
+            <div class="section-head">
+                <p class="eyebrow mono">Projects</p>
+                <h2>Selected systems and experiments</h2>
+            </div>
+            <p class="lead">Production-minded experiments across automation, computer vision, finance, and applied data systems.</p>
+        </section>
 
-    <!-- Projects Grid -->
-    <section class="project-main-content">
-        <div class="project-grid" id="projectGrid">
-            <!-- Projects will be populated here by JavaScript -->
-        </div>
-    </section>
+        <section class="card-grid cards-2" id="projectsGrid"></section>
+
+        <section class="story panel block-pink">
+            <div class="footer-copy">
+                <p class="eyebrow mono">Contact</p>
+                <h2>Want a walkthrough, collaboration, or source access?</h2>
+                <p>Reach out directly for project details, research discussion, or implementation notes.</p>
+                <div class="hero-actions">
+                    <a class="pill pill-primary" href="mailto:shamiquekhan18@gmail.com">Get In Touch</a>
+                    <a class="pill pill-secondary" href="index.html#contact">Back to Home</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script>
-        // Project data
+        // Inline fallback projects (used if JSON not available)
         const projects = [
             {
-                title: 'CONSTITUTIONAL AI',
-                description: 'Implementation of Constitutional AI techniques for building safe and aligned AI systems with human values and ethical constraints.',
-                category: 'ai-ml',
-                tech: ['Python', 'AI Ethics', 'MIT License'],
-                github: 'https://github.com/shamiquekhan/Constitutional-AI'
+                title: 'Neuromorphic Sleep Staging Pipeline',
+                image: 'photos/IMG_20260103_140908769 (1).jpg',
+                description: 'Teacher-student sleep staging pipeline with subject-level splits, weighted training, and TFLite deployment for edge inference.'
             },
             {
-                title: 'MEDIARCHIVE',
-                description: 'India\'s unified health data system linking patients, doctors, and hospitals through a secure digital health ID. Built with React, featuring minimalist design and 75+ interactive features.',
-                category: 'web',
-                tech: ['React', 'Healthcare', 'JavaScript'],
-                github: 'https://github.com/shamiquekhan/mediarchive'
+                title: 'AI Investment Advisor Agent',
+                image: 'photos/IMG_20260103_152906402~2.jpg',
+                description: 'Stock analysis agent combining live market data, financial news sentiment, caching, and explainable AI scoring.'
             },
             {
-                title: 'MECHANISTIC TRANSPARENCY IN NEURAL NETWORKS',
-                description: 'A complete 4-phase mechanistic interpretability pipeline proving neural networks are transparent, interpretable, and controllable.',
-                category: 'ai-ml',
-                tech: ['Python', 'Interpretability', 'Research'],
-                github: 'https://github.com/shamiquekhan/Mechanistic-Transparency-in-Neural-Networks-A-Four-Layer-Analysis'
-            },
-            {
-                title: 'FINCHECK',
-                description: 'Real-time scam/phishing detector and credibility verifier; Chrome extension with Python APIs for enhanced online security.',
-                category: 'web',
-                tech: ['Python', 'Chrome Extension', 'MIT License'],
-                github: 'https://github.com/shamiquekhan/FinCheck'
-            },
-            {
-                title: 'SENSEX HESTON-ML CALIBRATION TOOL',
-                description: 'Machine learning system designed to solve the speed bottleneck in quantitative finance model calibration for BSE Sensex live markets.',
-                category: 'finance',
-                tech: ['Python', 'Quant Finance', 'MIT License'],
-                github: 'https://github.com/shamiquekhan/Sensex-Heston-ML-Calibration-Tool'
-            },
-            {
-                title: 'GREENMAGIC',
-                description: 'AI air-writing system: MediaPipe hand tracking to OCR with generative graphics overlays and voice feedback for interactive writing.',
-                category: 'ai-ml',
-                tech: ['Python', 'MediaPipe', 'Computer Vision'],
-                github: 'https://github.com/shamiquekhan/GreenMagic'
-            },
-            {
-                title: 'TENSORFLOW RAG Q&A APPLICATION',
-                description: 'RAG Q&A over TensorFlow docs: crawl→embed→index→answer with vector DB and GPT-4; web UI + CLI interface.',
-                category: 'ai-ml',
-                tech: ['Python', 'RAG', 'GPT-4'],
-                github: 'https://github.com/shamiquekhan/Tensorflow_rag_Q-A_application'
-            },
-            {
-                title: 'PATIENT RISK ASSESSMENT SYSTEM',
-                description: 'Patient risk stratification with ML models and Streamlit; AUC/ROC ~0.90 and clinical insights tooling for healthcare decision support.',
-                category: 'ai-ml',
-                tech: ['Python', 'Healthcare ML', 'Streamlit'],
-                github: 'https://github.com/shamiquekhan/Patient_Risk_Assessment_System'
-            },
-            {
-                title: 'HARVARD CS50 AI',
-                description: 'CS50 AI Projects - Complete Implementation Suite covering search algorithms, knowledge representation, optimization, and machine learning.',
-                category: 'ai-ml',
-                tech: ['Python', 'Harvard', 'AI Projects'],
-                github: 'https://github.com/shamiquekhan/harward-cs50-ai'
-            },
-            {
-                title: 'NIFTY50 AI TRADING SYSTEM',
-                description: 'AI-powered NIFTY50 trading: LSTM modeling, sentiment analysis (FinBERT), Kelly sizing, and auto-update pipeline for algorithmic trading.',
-                category: 'finance',
-                tech: ['Python', 'LSTM', 'MIT License'],
-                github: 'https://github.com/shamiquekhan/nifty50-ai'
-            },
-            {
-                title: 'AI INVESTMENT ADVISOR AGENT',
-                description: 'AI investment advisor scoring stocks via sentiment, fundamentals, and technicals; Chrome extension + Python backend for intelligent investment decisions.',
-                category: 'finance',
-                tech: ['Python', 'Chrome Extension', 'Sentiment Analysis'],
-                github: 'https://github.com/shamiquekhan/ai-investment-advisor-agent'
-            },
-            {
-                title: 'QUANTUM SYSTEM SOLVER (STREAMLIT)',
-                description: 'Interactive Streamlit app for 1D quantum-in-a-box mechanics: waves, probability, energy, HOMO-LUMO visualization and calculations.',
-                category: 'data',
-                tech: ['Python', 'Quantum Mechanics', 'Streamlit'],
-                github: 'https://github.com/shamiquekhan/Quantum_System_Solver_Project_streamlit'
-            },
-            {
-                title: 'QUANTUM SYSTEM SOLVER PROJECT',
-                description: '1D quantum system solver/visualizer: eigenvalues, wavefunctions, probabilities, time evolution, and export capabilities for quantum mechanics analysis.',
-                category: 'data',
-                tech: ['Jupyter Notebook', 'Quantum Physics', '1 Fork'],
-                github: 'https://github.com/shamiquekhan/Quantum_System_Solver_Project'
-            },
-            {
-                title: 'FALCON LANDING ANALYTICS',
-                description: 'End-to-end ML pipeline for SpaceX Falcon 9: data ingestion, SQL analytics, predictive modeling (85.19% accuracy), and Streamlit dashboards.',
-                category: 'ai-ml',
-                tech: ['Jupyter Notebook', 'SpaceX', 'ML Pipeline'],
-                github: 'https://github.com/shamiquekhan/Falcon-Landing-Analytics-End-to-End-Machine-Learning-Pipeline'
-            },
-            {
-                title: 'TESLA-GAMESTOP STOCK ANALYSIS',
-                description: 'TSLA/GME analytics: web scraping, data cleaning, statistical analysis, visualizations, and dashboards for financial market insights.',
-                category: 'finance',
-                tech: ['Jupyter Notebook', 'Web Scraping', 'Analytics'],
-                github: 'https://github.com/shamiquekhan/Tesla-GameStop-Stock-Analysis-Project'
-            },
-            {
-                title: 'IBM DATA SCIENCE CERTIFICATE',
-                description: 'Hands-on work and projects from the IBM Professional Data Science Certificate including coursework, practical assignments, and personal projects.',
-                category: 'data',
-                tech: ['Jupyter Notebook', 'IBM', 'Coursera'],
-                github: 'https://github.com/shamiquekhan/IBM_DataScience'
-            },
-            {
-                title: 'MACHINE LEARNING PROJECTS',
-                description: 'Machine learning projects and notebooks: classic algorithms, model training, evaluation, and comprehensive ML implementation showcase.',
-                category: 'ai-ml',
-                tech: ['Jupyter Notebook', 'ML Algorithms', 'Training'],
-                github: 'https://github.com/shamiquekhan/Machine_Learning_Projects'
-            },
-            {
-                title: 'DSA USING PYTHON',
-                description: 'Collection of Python programs implementing essential Data Structures and Algorithms step by step from YouTube tutorials (Code With Harry, freeCodeCamp).',
-                category: 'data',
-                tech: ['Python', 'Algorithms', 'Data Structures'],
-                github: 'https://github.com/shamiquekhan/D.S.A-Using-Python'
-            },
-            {
-                title: 'FUN PROJECTS',
-                description: 'Fun mini-projects and browser-based games; JavaScript/CSS experiments and interactive demos for creative coding exploration.',
-                category: 'web',
-                tech: ['Python', 'JavaScript', 'Games'],
-                github: 'https://github.com/shamiquekhan/Fun_Projects'
-            },
-            {
-                title: 'PROJECTS INDEX',
-                description: 'Index and quick links to assorted projects and experiments across AI/ML and applications - organized collection of work.',
-                category: 'data',
-                tech: ['Python', 'Index', 'AI/ML'],
-                github: 'https://github.com/shamiquekhan/Projects'
+                title: 'Falcon Landing Analytics',
+                image: 'photos/IMG_20260103_160722011 (2).jpg',
+                description: 'End-to-end machine learning pipeline for Falcon 9 landing prediction with data ingestion, visualization, and model comparison.'
             }
         ];
 
-        // Render projects
-        function renderProjects(filter = 'all') {
-            const grid = document.getElementById('projectGrid');
-            grid.innerHTML = '';
+        const grid = document.getElementById('projectsGrid');
 
-            const filtered = filter === 'all' 
-                ? projects 
-                : projects.filter(proj => proj.category === filter);
-
-            filtered.forEach(proj => {
-                const projectCard = document.createElement('div');
-                projectCard.className = 'project-card';
-                projectCard.setAttribute('data-category', proj.category);
-                
-                const techTags = proj.tech.map(t => `<span class="tech-tag">${t}</span>`).join('');
-                
-                projectCard.innerHTML = `
-                    <div class="project-content">
-                        <span class="project-category">${proj.category.replace('-', ' & ').toUpperCase()}</span>
-                        <h3 class="project-title">${proj.title}</h3>
-                        <p class="project-description">${proj.description}</p>
-                        <div class="project-tech">${techTags}</div>
-                        <div class="project-links">
-                            <a href="${proj.github}" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> VIEW CODE
-                            </a>
+        function renderProjects(list) {
+            grid.innerHTML = list.map((project, index) => {
+                const img = project.image || project.Image || 'photos/placeholder.png';
+                const title = project.title || project.Title || project.Name || 'Untitled Project';
+                const desc = project.description || project.Description || project.summary || '';
+                const year = project.year || project.Year || '2026';
+                const wide = index === 0 ? 'project-card-wide' : '';
+                return `
+                    <article class="project-card ${wide}">
+                        <div class="project-topline">
+                            <span>Project ${index + 1}</span>
+                            <span>${year}</span>
                         </div>
-                    </div>
+                        <img src="${img}" alt="${title}">
+                        <h3>${title}</h3>
+                        <p>${desc}</p>
+                    </article>
                 `;
-                grid.appendChild(projectCard);
-            });
+            }).join('');
         }
 
-        // Filter projects
-        function filterProjects(category) {
-            const buttons = document.querySelectorAll('.project-filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            renderProjects(category);
-        }
-
-        // Initialize
-        renderProjects();
+        // Try to load generated JSON first (projects_top20.json), fallback to inline `projects`.
+        fetch('projects_top20.json')
+            .then(resp => {
+                if (!resp.ok) throw new Error('No JSON');
+                return resp.json();
+            })
+            .then(data => {
+                if (Array.isArray(data) && data.length) {
+                    renderProjects(data);
+                } else {
+                    renderProjects(projects);
+                }
+            })
+            .catch(() => renderProjects(projects));
     </script>
-
 </body>
 </html>
-
