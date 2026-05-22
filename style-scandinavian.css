@@ -1,0 +1,550 @@
+/* ==================== SCANDINAVIAN MINIMALIST PORTFOLIO ==================== */
+
+:root {
+    /* Palette: Warm Stone Neutrals + Single Accent */
+    --warm-white: #F7F5F0;
+    --near-black: #1A1815;
+    --warm-sand: #C8B89A;
+    --light-gray: #E8E5E0;
+    --medium-gray: #999999;
+    
+    /* Typography */
+    --font-serif: 'DM Serif Display', serif;
+    --font-sans: 'DM Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    background: var(--warm-white);
+    color: var(--near-black);
+    line-height: 1.6;
+}
+
+/* ==================== TYPOGRAPHY ==================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 4.5rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--medium-gray);
+}
+
+a {
+    color: var(--near-black);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--warm-sand);
+}
+
+/* ==================== HEADER & NAVIGATION ==================== */
+
+header {
+    padding: 2rem 3rem;
+    border-bottom: 0.5px solid var(--light-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: var(--warm-white);
+    z-index: 100;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+
+nav {
+    display: flex;
+    gap: 3rem;
+}
+
+nav a {
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--medium-gray);
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--near-black);
+}
+
+/* ==================== SCROLLING MARQUEE ==================== */
+
+.marquee-container {
+    background: var(--warm-white);
+    border-top: 0.5px solid var(--light-gray);
+    border-bottom: 0.5px solid var(--light-gray);
+    padding: 1.5rem 0;
+    overflow: hidden;
+}
+
+.marquee {
+    display: flex;
+    white-space: nowrap;
+    animation: scroll 30s linear infinite;
+}
+
+.marquee-item {
+    padding: 0 3rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--warm-sand);
+    font-family: var(--font-serif);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* ==================== HERO SECTION ==================== */
+
+.hero {
+    padding: 6rem 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-text h1 {
+    margin-bottom: 1.5rem;
+    color: var(--near-black);
+}
+
+.hero-text p {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat {
+    border-left: 0.5px solid var(--light-gray);
+    padding-left: 1.5rem;
+}
+
+.stat h3 {
+    font-size: 2rem;
+    color: var(--warm-sand);
+    margin-bottom: 0.5rem;
+}
+
+.stat p {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--medium-gray);
+}
+
+.hero-image {
+    width: 100%;
+    height: 500px;
+    background: var(--light-gray);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==================== ABOUT SECTION ==================== */
+
+.about {
+    padding: 4rem 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    border-top: 0.5px solid var(--light-gray);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.about-left h2 {
+    margin-bottom: 2rem;
+}
+
+.about-list {
+    list-style: none;
+}
+
+.about-list li {
+    padding: 1rem 0;
+    border-bottom: 0.5px solid var(--light-gray);
+    font-size: 0.95rem;
+    color: var(--medium-gray);
+}
+
+.about-list li:last-child {
+    border-bottom: none;
+}
+
+.about-right p {
+    margin-bottom: 1.5rem;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.2rem 2rem;
+    background: var(--warm-sand);
+    color: var(--warm-white);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.cta-button:hover {
+    background: var(--near-black);
+    color: var(--warm-white);
+    transform: translateX(4px);
+}
+
+/* ==================== PROJECTS SECTION ==================== */
+
+.projects {
+    padding: 4rem 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    border-top: 0.5px solid var(--light-gray);
+}
+
+.projects h2 {
+    margin-bottom: 3rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+.project-card {
+    border: 0.5px solid var(--light-gray);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    border-color: var(--warm-sand);
+    background: rgba(200, 184, 154, 0.03);
+}
+
+.project-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--warm-sand);
+}
+
+.project-meta span {
+    font-family: var(--font-serif);
+    font-size: 0.8rem;
+}
+
+.project-meta span:not(:last-child)::after {
+    content: " ·";
+    margin-left: 1rem;
+    color: var(--light-gray);
+}
+
+.project-card h3 {
+    margin-bottom: 0.8rem;
+    transition: color 0.3s ease;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.project-image {
+    width: 100%;
+    height: 250px;
+    background: var(--light-gray);
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-arrow {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--warm-sand);
+    opacity: 0;
+    transition: all 0.3s ease;
+    transform: translate(10px, -10px);
+}
+
+.project-card:hover .project-arrow {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* ==================== TECH STACK SECTION ==================== */
+
+.tech-stack {
+    padding: 4rem 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    border-top: 0.5px solid var(--light-gray);
+}
+
+.tech-stack h2 {
+    margin-bottom: 2rem;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.tech-item {
+    border: 0.5px solid var(--light-gray);
+    padding: 1.5rem;
+    text-align: center;
+    transition: border-color 0.3s ease;
+}
+
+.tech-item:hover {
+    border-color: var(--warm-sand);
+}
+
+.tech-item p {
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* ==================== QUOTE SECTION ==================== */
+
+.quote-section {
+    padding: 5rem 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    border-top: 0.5px solid var(--light-gray);
+    border-bottom: 0.5px solid var(--light-gray);
+}
+
+.quote-section blockquote {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--near-black);
+}
+
+.quote-section p {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--warm-sand);
+}
+
+/* ==================== FOOTER ==================== */
+
+footer {
+    padding: 3rem;
+    background: var(--warm-white);
+    border-top: 0.5px solid var(--light-gray);
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.85rem;
+    color: var(--medium-gray);
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 1.5rem 2rem;
+    }
+
+    nav {
+        gap: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero {
+        padding: 3rem 2rem;
+    }
+
+    .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .about {
+        padding: 2rem;
+    }
+
+    .projects {
+        padding: 2rem;
+    }
+
+    .quote-section {
+        padding: 3rem 2rem;
+    }
+
+    .quote-section blockquote {
+        font-size: 1.5rem;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .marquee-item {
+        padding: 0 1.5rem;
+    }
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+.divider {
+    border-bottom: 0.5px solid var(--light-gray);
+}
+
+.accent {
+    color: var(--warm-sand);
+}
+
+/* ==================== ANIMATIONS ==================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+[data-animate] {
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: var(--delay, 0s);
+}
