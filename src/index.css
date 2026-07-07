@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #F4F1EA;
+  --color-canvas-dark: #0E0D0B;
+  --color-ink: #1A1815;
+  --color-ink-soft: #5C584F;
+  --color-paper: #F4F1EA;
+  --color-paper-soft: rgba(244, 241, 234, 0.55);
+  --color-hairline: #D9D4C7;
+  --font-condensed: 'Barlow Condensed', sans-serif;
+  --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'DM Serif Display', serif;
+}
+
+* {
+  font-family: var(--font-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

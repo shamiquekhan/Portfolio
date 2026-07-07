@@ -1,0 +1,46 @@
+export interface Certificate {
+  title: string
+  issuer: string
+  category: 'Research' | 'Generative AI & LLMs' | 'Machine Learning & Data Science' | 'Python & Development' | 'Cloud & Data Tools' | 'Professional Development'
+}
+
+export const certificates: Certificate[] = [
+  { title: 'PIGNet V2: Physics-Informed GNNs for High-Throughput Crystalline Material Property Prediction', issuer: 'ChemRxiv', category: 'Research' },
+  { title: 'Mechanistic Transparency of Neural Networks: A Four-Layer Framework', issuer: 'ResearchGate', category: 'Research' },
+  { title: 'Liberating Justice: Fighting Judicial Waithood with AI', issuer: 'ResearchGate', category: 'Research' },
+  { title: 'Oracle Cloud Infrastructure 2025 Certified Generative AI Professional', issuer: 'Oracle', category: 'Generative AI & LLMs' },
+  { title: 'Google for Startups AI Fellow — Prompt to Prototype', issuer: 'Google × Scaler', category: 'Generative AI & LLMs' },
+  { title: 'IBM Generative AI: Elevate Your Data Science Career', issuer: 'IBM', category: 'Generative AI & LLMs' },
+  { title: 'Columbia+: Prompt Engineering & Programming with OpenAI', issuer: 'Columbia University', category: 'Generative AI & LLMs' },
+  { title: 'Google Cloud — Introduction to Large Language Models', issuer: 'Google Cloud', category: 'Generative AI & LLMs' },
+  { title: 'CS50 AI with Python', issuer: 'Harvard', category: 'Machine Learning & Data Science' },
+  { title: 'IBM Data Science Professional Certificate', issuer: 'IBM', category: 'Machine Learning & Data Science' },
+  { title: 'AI-Machine Learning Engineer Certificate', issuer: 'Reliance Foundation', category: 'Machine Learning & Data Science' },
+  { title: 'WorldQuant Applied AI Lab — Deep Learning for Computer Vision', issuer: 'WorldQuant', category: 'Machine Learning & Data Science' },
+  { title: 'WorldQuant Deep Learning Fundamentals Lab', issuer: 'WorldQuant', category: 'Machine Learning & Data Science' },
+  { title: 'DeepLearning.AI NLP in TensorFlow', issuer: 'DeepLearning.AI', category: 'Machine Learning & Data Science' },
+  { title: 'Machine Learning Algorithms', issuer: 'DeepLearning.AI', category: 'Machine Learning & Data Science' },
+  { title: 'Kaggle Intermediate Machine Learning', issuer: 'Kaggle', category: 'Machine Learning & Data Science' },
+  { title: 'Kaggle Intro to Machine Learning', issuer: 'Kaggle', category: 'Machine Learning & Data Science' },
+  { title: 'University of London — Machine Learning for All', issuer: 'University of London', category: 'Machine Learning & Data Science' },
+  { title: 'Fundamentals of Finance', issuer: 'UCI / SEBI', category: 'Machine Learning & Data Science' },
+  { title: 'SEBI Investor Awareness Test', issuer: 'SEBI', category: 'Machine Learning & Data Science' },
+  { title: 'Fundamentals of AI ML', issuer: 'Vityarthi', category: 'Machine Learning & Data Science' },
+  { title: 'Python for Data Science, AI & Development', issuer: 'IBM', category: 'Python & Development' },
+  { title: 'C++ Fundamentals', issuer: 'Infosys Springboard', category: 'Python & Development' },
+  { title: 'Google Crash Course on Python', issuer: 'Google', category: 'Python & Development' },
+  { title: 'Cisco Python Essentials 1 & 2', issuer: 'Cisco', category: 'Python & Development' },
+  { title: 'Infosys Springboard: Mastering Python', issuer: 'Infosys Springboard', category: 'Python & Development' },
+  { title: 'Databases and SQL for Data Science', issuer: 'IBM', category: 'Cloud & Data Tools' },
+  { title: 'MongoDB Basics for Students', issuer: 'MongoDB', category: 'Cloud & Data Tools' },
+  { title: 'Hands-On Version Control with Git', issuer: 'Infosys Springboard', category: 'Cloud & Data Tools' },
+  { title: 'Prompt Design in Vertex AI', issuer: 'Google Cloud', category: 'Cloud & Data Tools' },
+  { title: 'Prepare Data for ML APIs on Google Cloud', issuer: 'Google Cloud', category: 'Cloud & Data Tools' },
+  { title: 'Google Analytics Certification', issuer: 'Google', category: 'Professional Development' },
+  { title: 'McKinsey Forward Program', issuer: 'McKinsey & Company', category: 'Professional Development' },
+  { title: 'Deloitte Data Analytics Job Simulation', issuer: 'Deloitte', category: 'Professional Development' },
+  { title: 'MBA Essentials', issuer: 'University of Glasgow', category: 'Professional Development' },
+  { title: 'Creating Change through Social Entrepreneurship', issuer: 'Yale University', category: 'Professional Development' },
+  { title: 'IBM Design Thinking', issuer: 'IBM', category: 'Professional Development' },
+  { title: 'Diving into Radical Creativity', issuer: 'IBM', category: 'Professional Development' },
+]
