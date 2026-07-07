@@ -3,6 +3,8 @@ import { ArrowUpRight } from 'lucide-react'
 import { ContainerScroll } from '../components/ContainerScroll'
 import { featuredProjects, archiveProjects } from '../data/projects'
 
+const allTech = [...new Set(featuredProjects.flatMap((p) => p.stack))]
+
 export default function Work() {
   return (
     <div className="bg-canvas">
@@ -20,10 +22,38 @@ export default function Work() {
           </>
         }
       >
-        <div className="flex items-center justify-center h-full">
-          <p className="font-display italic text-2xl md:text-4xl text-ink/40 max-w-md text-center leading-relaxed">
-            {featuredProjects.length} systems, one standard: it has to work.
+        <div className="flex flex-col items-center justify-center h-full gap-6 px-8 relative">
+          {/* Decorative corner brackets */}
+          <div className="absolute top-6 left-6 w-10 h-10 border-t-2 border-l-2 border-ink/30" />
+          <div className="absolute top-6 right-6 w-10 h-10 border-t-2 border-r-2 border-ink/30" />
+          <div className="absolute bottom-6 left-6 w-10 h-10 border-b-2 border-l-2 border-ink/30" />
+          <div className="absolute bottom-6 right-6 w-10 h-10 border-b-2 border-r-2 border-ink/30" />
+
+          {/* Large stat */}
+          <div className="text-center">
+            <p className="font-condensed font-700 text-8xl md:text-[10rem] text-ink/20 leading-none tracking-[-0.03em]">
+              {String(featuredProjects.length).padStart(2, '0')}
+            </p>
+          </div>
+
+          <p className="font-condensed font-700 text-xl md:text-3xl text-ink max-w-md text-center leading-snug">
+            {featuredProjects.length} systems, one standard: <span className="font-display italic">it has to work.</span>
           </p>
+
+          {/* Hairline separator */}
+          <div className="w-16 h-[1px] bg-ink/30" />
+
+          {/* Tech badges */}
+          <div className="flex flex-wrap justify-center gap-2 max-w-xl">
+            {allTech.map((tech) => (
+              <span
+                key={tech}
+                className="font-condensed text-xs text-ink border border-ink/40 px-3 py-1.5"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
       </ContainerScroll>
 

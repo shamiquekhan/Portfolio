@@ -93,28 +93,41 @@ export default function Home() {
 
       {/* About snippet */}
       <SectionReveal className="bg-canvas py-24 md:py-32 px-6 md:px-12">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="font-condensed text-xs uppercase tracking-widest text-ink-soft mb-8">
-            Proof statement
-          </p>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-start">
+          <div className="md:col-span-4">
+            <img
+              src="/photo.jpg"
+              alt="Shamique Khan"
+              className="w-full grayscale contrast-[1.05] brightness-[1.02] rounded-sm"
+            />
+            <p className="font-condensed text-xs uppercase tracking-widest text-ink-soft mt-3">
+              Bhopal, India
+            </p>
+          </div>
 
-          <AnimatedLetter
-            text="I don't have years of industry experience. What I have is a habit of shipping working systems — a 10-model AI Council for quant trading, a PINN-GNN for battery materials, an open-source diagnostics library on PyPI, three published research papers, and being honest about what's still unfinished in each of them."
-            className="text-2xl md:text-3xl leading-snug text-ink"
-          />
+          <div className="md:col-span-8">
+            <p className="font-condensed text-xs uppercase tracking-widest text-ink-soft mb-8">
+              Proof statement
+            </p>
 
-          <div className="mt-16 flex justify-center gap-12 md:gap-24 border-t border-hairline pt-12">
-            <div className="text-center">
-              <p className="font-condensed font-700 text-4xl text-ink">40+</p>
-              <p className="font-condensed text-xs uppercase tracking-widest text-ink-soft mt-1">Projects shipped</p>
-            </div>
-            <div className="text-center">
-              <p className="font-condensed font-700 text-4xl text-ink">4</p>
-              <p className="font-condensed text-xs uppercase tracking-widest text-ink-soft mt-1">Research publications</p>
-            </div>
-            <div className="text-center">
-              <p className="font-condensed font-700 text-4xl text-ink">100K</p>
-              <p className="font-condensed text-xs uppercase tracking-widest text-ink-soft mt-1">LinkedIn impressions</p>
+            <AnimatedLetter
+              text="I don't have years of industry experience. What I have is a habit of shipping working systems — a 10-model AI Council for quant trading, a PINN-GNN for battery materials, an open-source diagnostics library on PyPI, four research publications, and being honest about what's still unfinished in each of them."
+              className="text-2xl md:text-3xl leading-snug text-ink"
+            />
+
+            <div className="mt-16 flex gap-10 md:gap-16 border-t border-hairline pt-12">
+              <div>
+                <p className="font-condensed font-700 text-4xl text-ink">40+</p>
+                <p className="font-condensed text-xs uppercase tracking-widest text-ink-soft mt-1">Projects shipped</p>
+              </div>
+              <div>
+                <p className="font-condensed font-700 text-4xl text-ink">4</p>
+                <p className="font-condensed text-xs uppercase tracking-widest text-ink-soft mt-1">Research publications</p>
+              </div>
+              <div>
+                <p className="font-condensed font-700 text-4xl text-ink">100K</p>
+                <p className="font-condensed text-xs uppercase tracking-widest text-ink-soft mt-1">LinkedIn impressions</p>
+              </div>
             </div>
           </div>
         </div>
