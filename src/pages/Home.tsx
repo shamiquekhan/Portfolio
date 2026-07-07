@@ -128,6 +128,10 @@ export default function Home() {
                 <p className="font-condensed font-700 text-4xl text-ink">100K</p>
                 <p className="font-condensed text-xs uppercase tracking-widest text-ink-soft mt-1">LinkedIn impressions</p>
               </div>
+              <div>
+                <p className="font-condensed font-700 text-4xl text-ink">118</p>
+                <p className="font-condensed text-xs uppercase tracking-widest text-ink-soft mt-1">LeetCode problems solved</p>
+              </div>
             </div>
           </div>
         </div>

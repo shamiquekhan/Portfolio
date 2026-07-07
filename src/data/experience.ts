@@ -8,6 +8,12 @@ export interface ExperienceEntry {
 
 export const experienceData: ExperienceEntry[] = [
   {
+    role: 'AI Engineer Intern',
+    org: 'Suproc',
+    dates: 'Jul 2026 – Present · 1 mo',
+    description: 'Building and shipping AI systems as part of an engineering team, working with real-world constraints and production-grade ML infrastructure. India · Remote',
+  },
+  {
     role: 'Machine Learning Engineering Intern',
     org: 'FlyRank AI',
     dates: 'Jul 2026 – Present',

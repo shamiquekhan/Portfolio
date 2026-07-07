@@ -5,6 +5,7 @@ const links = [
   { label: 'Email', href: 'mailto:shamiquekhan18@gmail.com', icon: Mail },
   { label: 'GitHub', href: 'https://github.com/shamiquekhan', icon: ExternalLink },
   { label: 'LinkedIn', href: 'https://linkedin.com/in/shamique-khan', icon: ExternalLink },
+  { label: 'LeetCode', href: 'https://leetcode.com/u/ShamiqueKhan/', icon: ExternalLink },
   { label: 'quantml.tech', href: 'https://quantml.tech', icon: Globe },
 ]
 
