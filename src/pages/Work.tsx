@@ -17,7 +17,7 @@ export default function Work() {
               Featured protocols
             </h1>
             <p className="text-ink-soft text-sm md:text-base max-w-lg mx-auto leading-relaxed">
-              Production-grade agentic systems and ML pipelines. Every project shipped, not tutorial-followed.
+               Agentic systems, ML pipelines, and research. Every project shipped, not tutorial-followed.
             </p>
           </>
         }

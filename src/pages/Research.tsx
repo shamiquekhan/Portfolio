@@ -5,7 +5,7 @@ import WordsPullUp from '../components/WordsPullUp'
 const publications = [
   {
     title: 'PIGNet V2: Physics-Informed Graph Neural Networks for High-Throughput Crystalline Material Property Prediction',
-    venue: 'ChemRxiv — Working Paper',
+    venue: 'ResearchGate · ChemRxiv',
     date: 'May 2026',
     abstract:
       'Predicting the electronic and thermodynamic properties of crystalline solids from atomic structure is a central problem in computational materials science. Density Functional Theory (DFT) provides first-principles accuracy but scales as O(N³) with system size, rendering it computationally intractable for the high-throughput screening of large compositional spaces. Here we present PIGNet V2, a Physics-Informed Graph Network that combines attention-gated message passing, 56-dimensional 3-body angular edge features, and a physics-constrained multi-task prediction head to simultaneously infer band gap, formation energy, and thermodynamic stability from unrelaxed crystal structures. By embedding physical constraints directly into the model architecture — Softplus-bounded non-negative properties, thermodynamic penalty terms in the loss function, and post-prediction conformal calibration — PIGNet V2 guarantees zero physically impossible predictions across all test configurations.',
@@ -15,7 +15,7 @@ const publications = [
       'BatteryFormer module eliminates DFT geometry optimisation bottleneck, screening 104,934 high-entropy cathode configurations',
       'Identified Ir/Ru co-doping strategy elevating theoretical energy density from 752.4 to 1104.5 Wh/kg in Na₆CoS₄ system',
     ],
-    url: 'https://doi.org/10.26434/chemrxiv.15003638.v1',
+    url: 'https://www.researchgate.net/publication/405104948_PIGNet_V2_Physics-Informed_Graph_Neural_Networks_for_High-Throughput_Crystalline_Material_Property_Prediction',
   },
   {
     title: 'Structural Fingerprints of Label Memorization in Shallow Neural Networks',
@@ -44,21 +44,24 @@ const publications = [
       'Sparse modular circuits: 3.1 ± 1.2 neurons per class, 50% sparsity',
       'ROME causal repair: 0% → 97.86% accuracy on targeted failure, 0.28% weight modification',
     ],
-    url: 'https://www.researchgate.net/profile/Shamique-Khan',
+    url: 'https://www.researchgate.net/publication/404699629_Mechanistic_Transparency_of_Neural_Networks_A_Four-Layer_Framework_for_Demystifying_the_Black_Box',
   },
   {
     title: 'Liberating Justice: Fighting Judicial Waithood with AI',
     venue: 'ResearchGate',
     date: 'Dec 2025',
     abstract:
-      'Proposes a Retrieval-Augmented Generation (RAG)-based "First-Layer Magistrate" AI model designed to automate low-complexity procedural bail decisions in India\'s undertrial backlog. With 50.3 million pending cases and undertrial prisoners comprising 75–77% of all inmates, the system targets reducing decision latency from months to minutes for routine administrative matters. Architecture includes hallucination prevention via locked retrieval from verified government databases, constitutional-AI fairness training to avoid biased historical records, an explainable "Show Your Work" framework for human judge review, and integration with India\'s Aadhaar and UPI digital stacks for streamlined bail-to-release workflow.',
+      'Across the globe, there is a catastrophic divide between a massive demographic youth bulge and stagnant, old-fashioned institutions in the justice system. This essay expostulates that the traditional model of justice has become an obstruction for human potential, trapping millions in a state of waithood — a period of prolonged, unproductive detention while anticipating trial for minor, bailable offences. Worldwide, justice capacity has failed to scale with population growth; India operates with a dire ratio of just 15 judges per million people, compared to 150 per million in the U.S. and 220 in Europe. The outcome is a structural collapse validated by India\'s 50.3 million pending cases and an undertrial population comprising 75–77% of all prisoners, most of whom are young men from poor and underserved backgrounds. To confront this issue, I propose a Retrieval-Augmented Generation (RAG)-based "First-Layer Magistrate" AI Model to automate low-complexity procedural decisions — reducing decision latency from months to minutes while preserving the essence of justice on a worldwide democratic scale.',
     findings: [
-      'Decision latency reduction: months → minutes for routine procedural decisions',
-      'Hallucination prevention via RAG with locked retrieval from verified legal databases',
-      'Constitutional AI framework for demographic parity in bail decisions',
-      'Explainable "Show Your Work" audit trail for human judge sign-off',
+      '50.3 million pending cases in India — 75–77% of prisoners are undertrials awaiting trial for minor/bailable offences',
+      'India operates at 15 judges per million people vs 150 (US) and 220 (Europe) — structural capacity collapse',
+      'RAG-based "First-Layer Magistrate" AI reduces procedural decision latency from months to minutes',
+      'Hallucination prevention via locked retrieval from verified government legal databases',
+      'Constitutional-AI fairness training to avoid bias amplification from historically skewed records',
+      'Explainable "Show Your Work" audit trail enabling human judge review and sign-off',
+      'Integration with Aadhaar and UPI digital stacks for streamlined bail-to-release workflow',
     ],
-    url: 'https://www.researchgate.net/profile/Shamique-Khan',
+    url: 'https://www.researchgate.net/publication/399084752_Liberating_Justice_Fighting_Judicial_Waithood_with_AI',
   },
 ]
 
