@@ -1,13 +1,11 @@
-# QuantML Tools Repository
+# Quantitative ML Tools Repository
 
-Welcome to the official QuantML Tools repository. This monorepo contains production-grade, AI-powered tools for quantitative finance, trading, and financial compliance, developed and maintained by QuantML.
+This monorepo contains production-grade, AI-powered tools for quantitative finance, trading, and financial compliance, developed as independent research and engineering projects.
 
-## 🚀 About QuantML
+## 🚀 About the collection
 
-QuantML delivers AI-native infrastructure for institutional quantitative trading, combining regime-aware decision making, constraint-satisfying intelligence, and explainable multi-AI consensus. Our unified research-to-execution platform accelerates quant research cycles and ensures regulatory-compliant alpha generation at scale.
+The collection explores regime-aware decision making, constraint-satisfying intelligence, and explainable multi-model workflows for quantitative research.
 
-**Website:** [quantml.ai](https://quantml.ai)  
-**Contact:** careers@quantml.ai  
 **Hiring:** ML Engineers, Quant Researchers, Infrastructure Specialists
 
 ---
@@ -53,7 +51,7 @@ Each branch contains its own README and setup instructions.
 
 ---
 
-© 2026 QuantML. All rights reserved.
+© 2026 Shamique Khan. All rights reserved.
 
 Edit `.env` file with your free API keys:
 

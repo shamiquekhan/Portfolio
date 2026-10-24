@@ -1,4 +1,4 @@
-import { useScroll, useTransform } from 'framer-motion'
+import { useReducedMotion, useScroll, useTransform } from 'framer-motion'
 import { motion } from 'framer-motion'
 import { useRef } from 'react'
 import type { ExperienceEntry } from '../data/experience'
@@ -13,13 +13,14 @@ export default function TimelineEntry({ entry }: TimelineEntryProps) {
     target: ref,
     offset: ['start 0.75', 'start 0.25'],
   })
+  const prefersReducedMotion = useReducedMotion()
 
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.92, 1.04, 0.92])
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.4, 1, 0.5])
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], prefersReducedMotion ? [1, 1, 1] : [0.92, 1.04, 0.92])
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], prefersReducedMotion ? [1, 1, 1] : [0.4, 1, 0.5])
   const markerBg = useTransform(
     scrollYProgress,
     [0, 0.5, 1],
-    ['#D9D4C7', '#1A1815', '#D9D4C7']
+    prefersReducedMotion ? ['#1A1815', '#1A1815', '#1A1815'] : ['#D9D4C7', '#1A1815', '#D9D4C7']
   )
 
   return (
@@ -33,14 +34,14 @@ export default function TimelineEntry({ entry }: TimelineEntryProps) {
             className="w-3 h-3 rounded-full mt-1.5 shrink-0 border-2 border-hairline"
             style={{ backgroundColor: markerBg }}
           />
-          <div className="pb-12">
+          <div className="min-w-0 pb-12">
             <h3 className="font-condensed font-700 text-xl md:text-2xl text-ink">
               {entry.role}
             </h3>
-            <p className="text-sm text-ink-soft font-condensed uppercase tracking-wide">
+            <p className="break-words text-sm text-ink-soft font-condensed">
               {entry.org} · {entry.dates}
             </p>
-            <p className="text-sm text-ink-soft leading-relaxed mt-1 max-w-xl">
+            <p className="break-words text-sm text-ink-soft leading-relaxed mt-2 max-w-xl">
               {entry.description}
             </p>
           </div>

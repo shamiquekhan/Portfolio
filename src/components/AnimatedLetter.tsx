@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, type MotionValue } from 'framer-motion'
+import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from 'framer-motion'
 import { useRef } from 'react'
 
 interface AnimatedLetterProps {
@@ -25,6 +25,11 @@ export default function AnimatedLetter({ text, className = '' }: AnimatedLetterP
     target: ref,
     offset: ['start 0.8', 'end 0.3'],
   })
+  const prefersReducedMotion = useReducedMotion()
+
+  if (prefersReducedMotion) {
+    return <p className={className}>{text}</p>
+  }
 
   const chars = text.split('')
   const total = chars.length

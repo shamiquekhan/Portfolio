@@ -1,4 +1,4 @@
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, useReducedMotion } from 'framer-motion'
 import { useRef } from 'react'
 
 interface WordsPullUpProps {
@@ -12,6 +12,7 @@ interface WordsPullUpProps {
 export default function WordsPullUp({ text, serifIndices = [], className = '', wordClassName = '', delay = 0 }: WordsPullUpProps) {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const prefersReducedMotion = useReducedMotion()
   const words = text.split(' ')
 
   return (
@@ -19,16 +20,16 @@ export default function WordsPullUp({ text, serifIndices = [], className = '', w
       {words.map((word, i) => (
         <motion.span
           key={i}
-          className={`inline-block ${serifIndices.includes(i) ? 'font-display italic' : ''} ${wordClassName}`}
-          initial={{ y: 24, opacity: 0 }}
-          animate={isInView ? { y: 0, opacity: 1 } : {}}
+          className={`inline-block mr-[0.22em] last:mr-0 ${serifIndices.includes(i) ? 'font-display italic' : ''} ${wordClassName}`}
+          initial={prefersReducedMotion ? false : { y: 24, opacity: 0 }}
+          animate={prefersReducedMotion ? { opacity: 1 } : isInView ? { y: 0, opacity: 1 } : {}}
           transition={{
-            duration: 0.5,
-            delay: delay + i * 0.06,
+            duration: prefersReducedMotion ? 0 : 0.5,
+            delay: prefersReducedMotion ? 0 : delay + i * 0.06,
             ease: [0.22, 1, 0.36, 1],
           }}
         >
-          {word}{' '}
+          {word}
         </motion.span>
       ))}
     </div>

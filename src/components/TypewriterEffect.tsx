@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useInView } from "framer-motion"
+import { motion, useInView, useReducedMotion } from "framer-motion"
 import { useRef } from "react"
 
 interface TypewriterEffectProps {
@@ -13,6 +13,11 @@ interface TypewriterEffectProps {
 export default function TypewriterEffect({ text, className = "", speed = 0.04, delay = 0 }: TypewriterEffectProps) {
   const ref = useRef<HTMLParagraphElement>(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const prefersReducedMotion = useReducedMotion()
+
+  if (prefersReducedMotion) {
+    return <p ref={ref} className={className}>{text}</p>
+  }
 
   return (
     <p ref={ref} className={className}>

@@ -1,67 +1,74 @@
 import { motion } from 'framer-motion'
-import { ArrowUpRight } from 'lucide-react'
 import WordsPullUp from '../components/WordsPullUp'
 
-const publications = [
+interface Publication {
+  title: string
+  venue: string
+  date: string
+  abstract: string
+  findings: string[]
+  publicationUrl: string
+  githubUrl: string
+}
+
+const publications: Publication[] = [
   {
     title: 'PIGNet V2: Physics-Informed Graph Neural Networks for High-Throughput Crystalline Material Property Prediction',
-    venue: 'ResearchGate · ChemRxiv',
+    venue: 'ChemRxiv · ResearchGate',
     date: 'May 2026',
     abstract:
-      'Predicting the electronic and thermodynamic properties of crystalline solids from atomic structure is a central problem in computational materials science. Density Functional Theory (DFT) provides first-principles accuracy but scales as O(N³) with system size, rendering it computationally intractable for the high-throughput screening of large compositional spaces. Here we present PIGNet V2, a Physics-Informed Graph Network that combines attention-gated message passing, 56-dimensional 3-body angular edge features, and a physics-constrained multi-task prediction head to simultaneously infer band gap, formation energy, and thermodynamic stability from unrelaxed crystal structures. By embedding physical constraints directly into the model architecture — Softplus-bounded non-negative properties, thermodynamic penalty terms in the loss function, and post-prediction conformal calibration — PIGNet V2 guarantees zero physically impossible predictions across all test configurations.',
+      'A physics-informed graph neural network pipeline for predicting crystalline material properties and screening battery candidates. The work combines graph message passing, 3-body angular features, multi-task prediction, and physical constraints to keep outputs plausible while scaling discovery beyond conventional first-principles workflows.',
     findings: [
-      'Trained on 125,000 structures from the Materials Project — band gap MAE of 1.24 eV, formation energy MAE of 0.314 eV/atom',
-      'Zero physically impossible predictions across all test configurations via embedded physical constraints',
-      'BatteryFormer module eliminates DFT geometry optimisation bottleneck, screening 104,934 high-entropy cathode configurations',
-      'Identified Ir/Ru co-doping strategy elevating theoretical energy density from 752.4 to 1104.5 Wh/kg in Na₆CoS₄ system',
+      'Trained on 125,000+ crystal structures and screened 104,934 candidate cathode materials.',
+      'Identified an Ir/Ru co-doping strategy that lifted theoretical energy density from 752.4 to 1104.5 Wh/kg.',
+      'Released harmonized materials and solid-electrolyte transport datasets with source-traced conductivity labels.',
     ],
-    url: 'https://www.researchgate.net/publication/405104948_PIGNet_V2_Physics-Informed_Graph_Neural_Networks_for_High-Throughput_Crystalline_Material_Property_Prediction',
+    publicationUrl:
+      'https://www.researchgate.net/publication/405104948_PIGNet_V2_Physics-Informed_Graph_Neural_Networks_for_High-Throughput_Crystalline_Material_Property_Prediction',
+    githubUrl: 'https://github.com/shamiquekhan/Scandium-Lab-Model',
   },
   {
     title: 'Structural Fingerprints of Label Memorization in Shallow Neural Networks',
-    venue: 'arXiv cs.LG — submission pending',
+    venue: 'arXiv · submission pending',
     date: '2026',
     abstract:
-      'A four-phase diagnostic pipeline (weight geometry, CKA representation similarity, influence functions, and ROME causal editing) on shallow ReLU networks trained on MNIST with clean vs. 20%-corrupted labels. FC2 spectral norm collapses from 5.00 to 2.76 under corruption; CKA reveals a 0.160 drop localized to the ReLU nonlinearity; ROME rank-1 edits recover 10–22% of source-class accuracy; rank-5 SVD compression yields a 6.1-point accuracy gap between clean and memorizing models. Memorization is a structural, not purely statistical, phenomenon — and it is geometrically localized within the network.',
+      'A four-phase diagnostic study of how label memorization changes shallow-network geometry and representations. The pipeline combines spectral geometry, CKA, influence functions, and ROME editing to separate surface-level accuracy from structural damage caused by corrupted labels.',
     findings: [
-      'FC2 spectral norm collapse (5.00 → 2.76) under label corruption',
-      'CKA similarity drop of 0.160 localized to the ReLU activation function',
-      'ROME causal edits recover 10–22% of source-class accuracy across corruption configurations',
-      'Rank-5 SVD ablation reveals 6.1-point compression gap: memorization reduces compressibility',
-      'Test accuracy nearly unchanged (95.3% vs 93.8%) — the surface hides the structural damage',
+      'Measured FC2 spectral norm collapse from 5.00 to 2.76 under label corruption.',
+      'Localized a 0.160 CKA similarity drop to the ReLU activation function.',
+      'Recovered 10–22% of source-class accuracy with ROME causal edits across corruption configurations.',
     ],
-    url: 'https://github.com/shamiquekhan/Mechanistic-Transparency-in-Neural-Networks-A-Four-Layer-Analysis',
+    publicationUrl: 'https://github.com/shamiquekhan/Four-Phase-Memorization-Analysis',
+    githubUrl: 'https://github.com/shamiquekhan/Four-Phase-Memorization-Analysis',
   },
   {
-    title: 'Mechanistic Transparency of Neural Networks: A Four-Layer Framework for Demystifying the Black Box',
+    title: 'Mechanistic Transparency of Neural Networks: A Four-Layer Framework',
     venue: 'ResearchGate',
     date: 'Jan 2026',
     abstract:
-      'Evaluates a 784→16→10 fully connected network (12,730 parameters) on MNIST digit classification across geometric, representational, algorithmic, and causal transparency dimensions. Measured 3× improvement in class separability across layers, 87.5% monosemantic neurons (14/16), sparse modular circuits averaging 3.1 ± 1.2 neurons per class, and successful causal model editing via ROME restoring class-7 accuracy from 0% to 97.86% by modifying only 0.28% of weights with 1.51% average side effects. Demonstrates mechanistically transparent computations where internal structure causally determines behavior, fundamentally challenging the black-box narrative.',
+      'A four-layer framework for studying neural networks through geometric, representational, algorithmic, and causal transparency. Experiments on a compact MNIST network connect internal structure to behavior and show how targeted causal editing can repair a specific failure without broadly rewriting the model.',
     findings: [
-      '3× improvement in class separability across layers',
-      '87.5% of hidden neurons exhibited strong class specialization (monosemantic)',
-      'Sparse modular circuits: 3.1 ± 1.2 neurons per class, 50% sparsity',
-      'ROME causal repair: 0% → 97.86% accuracy on targeted failure, 0.28% weight modification',
+      'Observed a 3× improvement in class separability across network layers and 87.5% monosemantic hidden neurons.',
+      'Found sparse modular circuits averaging 3.1 ± 1.2 neurons per class.',
+      'Restored targeted class accuracy from 0% to 97.86% while modifying only 0.28% of weights.',
     ],
-    url: 'https://www.researchgate.net/publication/404699629_Mechanistic_Transparency_of_Neural_Networks_A_Four-Layer_Framework_for_Demystifying_the_Black_Box',
+    publicationUrl:
+      'https://www.researchgate.net/publication/404699629_Mechanistic_Transparency_of_Neural_Networks_A_Four-Layer_Framework_for_Demystifying_the_Black_Box',
+    githubUrl: 'https://github.com/shamiquekhan/Mechanistic-Transparency',
   },
   {
     title: 'Liberating Justice: Fighting Judicial Waithood with AI',
     venue: 'ResearchGate',
     date: 'Dec 2025',
     abstract:
-      'Across the globe, there is a catastrophic divide between a massive demographic youth bulge and stagnant, old-fashioned institutions in the justice system. This essay expostulates that the traditional model of justice has become an obstruction for human potential, trapping millions in a state of waithood — a period of prolonged, unproductive detention while anticipating trial for minor, bailable offences. Worldwide, justice capacity has failed to scale with population growth; India operates with a dire ratio of just 15 judges per million people, compared to 150 per million in the U.S. and 220 in Europe. The outcome is a structural collapse validated by India\'s 50.3 million pending cases and an undertrial population comprising 75–77% of all prisoners, most of whom are young men from poor and underserved backgrounds. To confront this issue, I propose a Retrieval-Augmented Generation (RAG)-based "First-Layer Magistrate" AI Model to automate low-complexity procedural decisions — reducing decision latency from months to minutes while preserving the essence of justice on a worldwide democratic scale.',
+      'An essay on the gap between India’s judicial capacity and its case backlog, proposing a retrieval-augmented “First-Layer Magistrate” for low-complexity procedural decisions. The proposal keeps verified retrieval, human sign-off, constitutional fairness, and an audit trail at the center of any system used around justice.',
     findings: [
-      '50.3 million pending cases in India — 75–77% of prisoners are undertrials awaiting trial for minor/bailable offences',
-      'India operates at 15 judges per million people vs 150 (US) and 220 (Europe) — structural capacity collapse',
-      'RAG-based "First-Layer Magistrate" AI reduces procedural decision latency from months to minutes',
-      'Hallucination prevention via locked retrieval from verified government legal databases',
-      'Constitutional-AI fairness training to avoid bias amplification from historically skewed records',
-      'Explainable "Show Your Work" audit trail enabling human judge review and sign-off',
-      'Integration with Aadhaar and UPI digital stacks for streamlined bail-to-release workflow',
+      'Frames retrieval-locked legal assistance as a way to reduce procedural decision latency while preserving human responsibility.',
+      'Proposes constitutional-AI fairness checks and a “Show Your Work” audit trail for judge review.',
+      'Connects the research argument to a working legal-research assistant built around hybrid retrieval.',
     ],
-    url: 'https://www.researchgate.net/publication/399084752_Liberating_Justice_Fighting_Judicial_Waithood_with_AI',
+    publicationUrl: 'https://www.researchgate.net/publication/399084752_Liberating_Justice_Fighting_Judicial_Waithood_with_AI',
+    githubUrl: 'https://github.com/shamiquekhan/Legal-AI',
   },
 ]
 
@@ -69,55 +76,66 @@ export default function Research() {
   return (
     <div className="pt-32 pb-24 px-6 md:px-12 bg-canvas">
       <div className="max-w-5xl mx-auto">
-        <motion.div
+        <motion.header
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="mb-20"
         >
-          <p className="font-condensed text-xs uppercase tracking-[0.15em] text-ink-soft mb-4">Research</p>
+          <p className="font-condensed text-sm text-ink-soft mb-5">Research / papers and working notes</p>
           <WordsPullUp
-            text="Published work on interpretability and applied ML."
-            className="mb-6"
-            wordClassName="font-condensed font-700 text-5xl md:text-7xl leading-[0.92] tracking-[-0.01em] text-ink"
+            text="Questions made testable."
+            className="max-w-4xl mb-8"
+            wordClassName="font-condensed font-700 text-5xl sm:text-6xl md:text-8xl leading-[0.9] tracking-[-0.04em] text-ink"
           />
-        </motion.div>
+          <p className="text-ink-soft text-base md:text-lg max-w-2xl leading-relaxed">
+            Publications and working repositories across interpretability, scientific ML, legal AI, and reliable retrieval.
+          </p>
+        </motion.header>
 
-        {publications.map((pub, i) => (
-          <motion.section
-            key={i}
+        {publications.map((publication, index) => (
+          <motion.article
+            key={publication.title}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="border-t border-hairline py-16"
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="border-t border-hairline py-14 md:py-16"
           >
-            <p className="font-condensed text-xs uppercase tracking-[0.15em] text-ink-soft mb-2">
-              {pub.venue} · {pub.date}
+            <p className="font-condensed text-sm text-ink-soft mb-3">
+              {publication.venue} · {publication.date}
             </p>
-            <h2 className="font-condensed font-700 text-3xl md:text-5xl leading-tight text-ink mb-6">
-              {pub.title}
+            <h2 className="max-w-4xl font-condensed font-700 text-2xl sm:text-3xl md:text-5xl leading-tight text-ink mb-6">
+              {publication.title}
             </h2>
-            <p className="text-ink-soft max-w-3xl leading-relaxed mb-8">
-              {pub.abstract}
-            </p>
-            <ul className="space-y-2 mb-8">
-              {pub.findings.map((f, j) => (
-                <li key={j} className="flex items-start gap-3 font-condensed text-sm text-ink-soft">
-                  <span className="text-ink mt-0.5">→</span>
-                  {f}
+            <p className="text-ink-soft max-w-3xl leading-relaxed mb-8">{publication.abstract}</p>
+            <ul className="space-y-3 mb-8 max-w-3xl">
+              {publication.findings.map((finding) => (
+                <li key={finding} className="flex items-start gap-3 text-sm text-ink-soft">
+                  <span aria-hidden="true" className="mt-2 size-1.5 shrink-0 rounded-full bg-ink/50" />
+                  <span>{finding}</span>
                 </li>
               ))}
             </ul>
-            <a
-              href={pub.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 font-condensed text-sm uppercase tracking-wide text-ink border-b border-ink/30 hover:border-ink transition-colors"
-            >
-              Read full paper <ArrowUpRight size={14} />
-            </a>
-          </motion.section>
+            <div className="flex flex-wrap gap-x-5 gap-y-2">
+              <a
+                href={publication.publicationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-11 items-center font-condensed text-sm text-ink border-b border-ink/30 hover:border-ink transition-colors"
+              >
+                Read publication
+              </a>
+              <a
+                href={publication.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-11 items-center font-condensed text-sm text-ink border-b border-ink/30 hover:border-ink transition-colors"
+              >
+                GitHub source
+              </a>
+            </div>
+          </motion.article>
         ))}
       </div>
     </div>

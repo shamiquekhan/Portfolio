@@ -8,8 +8,9 @@ Personal portfolio built with React, Vite, TypeScript, Tailwind CSS, and Framer 
 
 | Route | Content |
 |---|---|
-| `/` | Hero + About snippet + 4 featured case studies + Contact CTA |
-| `/work` | 4 expanded case studies + full archive disclosure |
+| `/` | Hero + About snippet + selected work + experience timeline + Contact CTA |
+| `/work` | 8 featured case studies + full 40-project GitHub inventory |
+| `/research` | Four publications with publication and GitHub source links |
 | `/certificates` | Credential backup, grouped by category |
 | `/contact` | Direct contact page |
 

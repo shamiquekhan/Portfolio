@@ -1,5 +1,5 @@
 import React, { useRef } from "react"
-import { useScroll, useTransform, motion, type MotionValue } from "framer-motion"
+import { useReducedMotion, useScroll, useTransform, motion, type MotionValue } from "framer-motion"
 
 export const ContainerScroll = ({
   titleComponent,
@@ -12,6 +12,7 @@ export const ContainerScroll = ({
   const { scrollYProgress } = useScroll({
     target: containerRef,
   })
+  const prefersReducedMotion = useReducedMotion()
   const [isMobile, setIsMobile] = React.useState(false)
 
   React.useEffect(() => {
@@ -25,21 +26,19 @@ export const ContainerScroll = ({
     }
   }, [])
 
-  const scaleDimensions = () => {
-    return isMobile ? [0.7, 0.9] : [1.05, 1]
-  }
+  const scaleDimensions = () => (prefersReducedMotion ? [1, 1] : isMobile ? [0.86, 0.96] : [1.05, 1])
 
-  const rotate = useTransform(scrollYProgress, [0, 1], [20, 0])
+  const rotate = useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? [0, 0] : isMobile ? [12, 0] : [20, 0])
   const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions())
-  const translate = useTransform(scrollYProgress, [0, 1], [0, -100])
+  const translate = useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? [0, 0] : isMobile ? [0, -48] : [0, -100])
 
   return (
     <div
-      className="h-[60rem] md:h-[80rem] flex items-center justify-center relative px-2 md:px-20"
+      className="h-[46rem] sm:h-[58rem] md:h-[80rem] flex items-center justify-center relative px-2 sm:px-4 md:px-20"
       ref={containerRef}
     >
       <div
-        className="py-10 md:py-40 w-full relative"
+        className="py-16 sm:py-24 md:py-40 w-full relative"
         style={{
           perspective: "1000px",
         }}
@@ -59,7 +58,7 @@ const Header = ({ translate, titleComponent }: { translate: MotionValue<number>;
       style={{
         translateY: translate,
       }}
-      className="max-w-5xl mx-auto text-center"
+      className="max-w-5xl mx-auto text-center px-4"
     >
       {titleComponent}
     </motion.div>
@@ -82,7 +81,7 @@ const Card = ({
         rotateX: rotate,
         scale,
       }}
-      className="max-w-5xl -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full border border-hairline p-2 md:p-6 bg-canvas rounded-2xl"
+      className="max-w-5xl -mt-8 sm:-mt-12 mx-auto h-[24rem] sm:h-[30rem] md:h-[40rem] w-full border border-hairline p-2 md:p-6 bg-canvas rounded-2xl"
     >
       <div className="h-full w-full overflow-hidden rounded-xl bg-canvas md:rounded-xl md:p-4">
         {children}

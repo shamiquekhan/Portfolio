@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 const links = [
   { to: '/', label: 'Home' },
@@ -11,17 +11,13 @@ const links = [
   { to: '/contact', label: 'Contact' },
 ]
 
-const startupLinks = [
-  { to: '/startups/quantml', label: 'QuantML' },
-  { to: '/startups/scandium-labs', label: 'Scandium Labs' },
-]
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
-  const [startupsOpen, setStartupsOpen] = useState(false)
   const { pathname } = useLocation()
-  const dropdownRef = useRef<HTMLDivElement>(null)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
+  const menuPanelRef = useRef<HTMLDivElement>(null)
+  const previousFocusRef = useRef<HTMLElement | null>(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -31,29 +27,64 @@ export default function Navbar() {
 
   useEffect(() => {
     setOpen(false)
-    setStartupsOpen(false)
   }, [pathname])
 
   useEffect(() => {
-    const handleClick = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setStartupsOpen(false)
+    document.body.style.overflow = open ? 'hidden' : ''
+
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [open])
+
+  useEffect(() => {
+    if (open) {
+      previousFocusRef.current = document.activeElement as HTMLElement
+      menuPanelRef.current?.querySelector<HTMLElement>('a[href]')?.focus()
+      return
+    }
+
+    previousFocusRef.current?.focus()
+    previousFocusRef.current = null
+  }, [open])
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false)
+
+      if (event.key === 'Tab' && open && menuPanelRef.current) {
+        const focusable = Array.from(menuPanelRef.current.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'))
+        const first = focusable[0]
+        const last = focusable[focusable.length - 1]
+
+        if (!first || !last) return
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault()
+          last.focus()
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault()
+          first.focus()
+        }
       }
     }
-    document.addEventListener('mousedown', handleClick)
-    return () => document.removeEventListener('mousedown', handleClick)
-  }, [])
 
-  const isStartupActive = pathname.startsWith('/startups/')
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [open])
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
+      aria-label="Primary navigation"
+      className={`site-nav fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
         scrolled ? 'bg-canvas/90 backdrop-blur' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 h-16 flex items-center justify-between">
-        <Link to="/" className="font-condensed font-700 text-lg tracking-tight text-ink">
+        <Link
+          to="/"
+          aria-label="Shamique Khan home"
+          className="font-condensed font-700 text-lg tracking-tight text-ink"
+        >
           SK
         </Link>
 
@@ -64,7 +95,8 @@ export default function Navbar() {
               <Link
                 key={link.to}
                 to={link.to}
-                className="font-condensed text-sm uppercase tracking-[0.08em] transition-colors duration-200 relative"
+                aria-current={isActive ? 'page' : undefined}
+                className="font-condensed text-sm transition-colors duration-200 relative"
                 style={{ color: isActive ? 'var(--color-ink)' : 'var(--color-ink-soft)' }}
               >
                 {link.label}
@@ -76,57 +108,19 @@ export default function Navbar() {
             )
           })}
 
-          {/* Startups dropdown */}
-          <div ref={dropdownRef} className="relative">
-            <button
-              onClick={() => setStartupsOpen(!startupsOpen)}
-              className="font-condensed text-sm uppercase tracking-[0.08em] transition-colors duration-200 flex items-center gap-1"
-              style={{ color: isStartupActive ? 'var(--color-ink)' : 'var(--color-ink-soft)' }}
-            >
-              Startups
-              <motion.span
-                animate={{ rotate: startupsOpen ? 180 : 0 }}
-                transition={{ duration: 0.2 }}
-                className="inline-flex"
-              >
-                <ChevronDown size={12} />
-              </motion.span>
-            </button>
-            <AnimatePresence>
-              {startupsOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: -4 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -4 }}
-                  transition={{ duration: 0.15 }}
-                  className="absolute top-full right-0 mt-2 bg-canvas border border-hairline min-w-[180px]"
-                >
-                  {startupLinks.map((sl) => {
-                    const isSlActive = pathname === sl.to
-                    return (
-                      <Link
-                        key={sl.to}
-                        to={sl.to}
-                        className="block px-4 py-3 font-condensed text-sm uppercase tracking-[0.04em] transition-colors hover:bg-hairline/30"
-                        style={{ color: isSlActive ? 'var(--color-ink)' : 'var(--color-ink-soft)' }}
-                        onClick={() => setStartupsOpen(false)}
-                      >
-                        {sl.label}
-                      </Link>
-                    )
-                  })}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
         </div>
 
         <button
-          className="md:hidden text-ink"
+          ref={menuButtonRef}
+          className={`relative z-menu md:hidden min-h-11 min-w-11 p-2 inline-flex items-center justify-center transition-colors ${
+            open ? 'text-paper' : 'text-ink'
+          }`}
           onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {open ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
         </button>
       </div>
 
@@ -136,29 +130,22 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-canvas-dark z-40 flex flex-col items-center justify-center gap-8"
+            id="mobile-navigation"
+            ref={menuPanelRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile navigation"
+            className="mobile-nav-panel fixed inset-0 bg-canvas-dark z-50 flex flex-col items-center justify-center gap-6 px-6"
           >
             {links.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className="font-display italic text-4xl text-paper hover:text-paper-soft transition-colors"
+                aria-current={pathname === link.to ? 'page' : undefined}
+                className="font-condensed text-3xl text-paper hover:text-paper-soft transition-colors px-4 py-2"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
-              </Link>
-            ))}
-            <p className="font-condensed text-xs uppercase tracking-[0.08em] text-paper-soft mt-4">
-              Startups
-            </p>
-            {startupLinks.map((sl) => (
-              <Link
-                key={sl.to}
-                to={sl.to}
-                className="font-condensed text-2xl text-paper hover:text-paper-soft transition-colors"
-                onClick={() => setOpen(false)}
-              >
-                {sl.label}
               </Link>
             ))}
           </motion.div>
